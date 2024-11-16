@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/styles/common.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Spin</title>
+</head>
+<body>
+    <div class="container container_none">
+      <header class="header">
+        <div class="header__main header__main_modify">
+          <a href="/pages/main.html" class="close-icon">
+            <img src="/images/close-icon.png" alt="close icon" />
+          </a>
+          <a href="#" class="question-icon">
+            <img src="/images/question-sign.png" alt="question sign" />
+          </a>
+        </div>
+      </header>
+        <main class="main">
+          <div class="spins">
+            <div class="spin-for-ton">
+                <h3 class="spin-for-ton__title">7 SPINS</h3>
+                <div class="spin-for-ton__price">
+                    <img src="/images/diamond.svg" alt="diamond icon">
+                    <span>0.5 tons</span>
+                    <a href="#">BUY</a>
+                </div>
+            </div>
+            <div class="spin-for-stars">
+                <h3 class="spin-for-stars__title">5 SPINS</h3>
+                <div class="spin-for-stars__price">
+                    <img src="/images/star.svg" alt="star icon">
+                    <span>100 stars</span>
+                    <a href="#">BUY</a>
+                </div>
+            </div>
+          </div>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="/images/loading.png" alt="Bonny">
+                <p class="swiper-slide__text swiper-slide__text_absolute">
+                  <span>1</span>
+                  <span>TON</span>
+                </p>
+              </div>
+              <div class="swiper-slide swiper-slide_flex">
+                <p class="swiper-slide__text swiper-slide__text_modify">
+                  <span>1</span>
+                  <span>FREE EXTRA</span>
+                </p>
+                <img src="/images/daily-reward.png" alt="Bag with ton">
+              </div>
+              <div class="swiper-slide swiper-slide_flex">
+                <p class="swiper-slide__text">
+                  <span>ACCESS CODE</span>
+                </p>
+                <img src="/images/daily-reward.png" alt="Bag with ton">
+              </div>
+              <div class="swiper-slide">
+                <img src="/images/loading.png" alt="Bonny">
+                <p class="swiper-slide__text swiper-slide__text_absolute">
+                  <span>3</span>
+                  <span>TON</span>
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <img src="/images/loading.png" alt="Bonny">
+                <p class="swiper-slide__text swiper-slide__text_absolute">
+                  <span>0.5</span>
+                  <span>TON</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <button id="spinButton">
+            <div class="triangle"></div>
+            <span id="start">START SPIN</span> 
+            <span id="remainder">LEFT: 3</span></button>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/roullete-wheel.js"></script>
+</body>
+</html>
