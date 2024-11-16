@@ -16,11 +16,12 @@
 }
 
 #loaderBar {
-  position: relative;
+  display: block;
+  position: absolute;
   max-width: 75px;
   z-index: 2;
-  top: 19px;
-  right: -147px;
+  top: 15%;
+  right: 24.3%;
 }
 
 .header {
