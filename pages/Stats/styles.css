@@ -1,0 +1,143 @@
+.your-leage {
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.your-leage__title {
+  font-size: 1.125rem;
+}
+
+.your-leage__info {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  padding: 20px;
+  background-color: #7f7f7f;
+  border-radius: 50%;
+}
+
+.your-leage__leage {
+  font-size: 1.5625rem;
+}
+
+.new-leage {
+  padding: 15px;
+
+  .new-leage__enter {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .new-leage__title {
+    font-weight: inherit;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .new-leage__text {
+    font-size: 0.5rem;
+  }
+
+  .new-leage__icon {
+    padding: 30px;
+    background-color: #7f7f7f;
+    border-radius: 50%;
+  }
+
+  .new-leage__label {
+    font-size: 10px;
+  }
+
+  .new-laege__progress-bar {
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 20px;
+
+    background-color: #d3d3d3;
+    border-radius: 10px;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  .new-leage__balance {
+    display: flex;
+    justify-content: space-between;
+    color: #ff7621;
+  }
+
+  .new-leage__progress-bar-fill {
+    width: 43%;
+    height: 100%;
+    background-color: #ff7621;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .new-leage__balance-text {
+    font-size: 0.625rem;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.get-damage {
+  display: flex;
+  gap: 1px;
+  justify-content: space-between;
+  padding: 10px 15px;
+
+  .get-damage__title {
+    font-size: 1.125rem;
+    font-weight: inherit;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  .get-damage__text {
+    font-size: 0.5rem;
+  }
+
+  .get-damage__icon {
+    padding: 51px 53px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
+}
+
+.leages {
+  display: flex;
+  justify-content: space-between;
+
+  .icon {
+    padding: 25px;
+  }
+}
+
+:is(.get-damage, .new-leage) {
+  background-color: var(--dark-grey);
+  border: 1px solid var(--dark);
+  border-radius: 15px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}

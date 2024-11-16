@@ -1,0 +1,60 @@
+.bosses-list {
+  padding: 15px 12px;
+  background-color: var(--dark-grey);
+  border-radius: 10px;
+}
+
+.bosses-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 53%;
+
+  text-align: center;
+
+  .list-item__title {
+    font-size: 1rem;
+  }
+}
+
+.line {
+  border-left: 1px solid #e7691a;
+}
+
+.health {
+  display: flex;
+  flex-wrap: wrap;
+
+  & span {
+    font-size: 0.75rem;
+  }
+
+  & img {
+    max-width: 35px;
+  }
+}
+
+.boss-stats {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.coins_modify {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+
+  .amount {
+    font-size: 1rem;
+  }
+
+  .count__label {
+    font-size: 0.5rem;
+  }
+}

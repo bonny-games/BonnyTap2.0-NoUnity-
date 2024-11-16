@@ -1,0 +1,15 @@
+.header:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.network-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 20px;
+  min-height: 100%;
+  background-color: var(--dark-grey);
+  border-radius: 10px;
+  overflow-y: auto;
+}

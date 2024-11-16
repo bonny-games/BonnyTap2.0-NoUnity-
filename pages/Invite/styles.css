@@ -1,0 +1,49 @@
+.invited {
+  padding: 10px 20px 60px 20px;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.invited-label {
+  display: block;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.title {
+  font-size: 30px;
+  font-weight: inherit;
+  text-align: center;
+}
+
+.referral {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.referral__btn {
+  padding-inline: 9.6%;
+}
+
+.copy {
+  padding: 5px;
+  background-color: var(--orange);
+  border-radius: 10px;
+
+  & img {
+    max-width: 30px;
+  }
+}
+
+:is(.invited, .referral) {
+  background-color: var(--dark-grey);
+  border-radius: 15px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
