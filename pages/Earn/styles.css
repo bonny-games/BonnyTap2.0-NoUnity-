@@ -2,6 +2,10 @@
   margin-bottom: 20px;
 }
 
+.main {
+  height: 60vh;
+}
+
 .network-list {
   display: flex;
   flex-direction: column;
@@ -12,4 +16,43 @@
   background-color: var(--dark-grey);
   border-radius: 10px;
   overflow-y: auto;
+}
+
+.popup-subscribe {
+  height: 300px;
+}
+
+.label {
+  font-weight: inherit;
+}
+
+.text {
+  font-size: 13px;
+}
+
+.btn-actions {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+
+.btn-subscribe {
+  padding-block: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.btn-check-subscribe {
+  cursor: pointer;
+  text-align: center;
+  padding-block: 10px;
+  width: 100%;
+  border-radius: 10px;
+  font-weight: inherit;
+}
+
+.list-item.joined {
+  background-color: green;
 }

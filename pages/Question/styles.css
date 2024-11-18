@@ -6,6 +6,7 @@
   min-height: 300px;
   margin-inline: auto;
   overflow-y: auto;
+  padding-bottom: 10px;
 }
 
 .question {
@@ -24,11 +25,11 @@
 }
 
 .question-text {
-  max-width: 180px;
-  top: 62px;
-  font-size: 25px;
+  max-width: 140px;
+  top: 36.2%;
+  font-size: 20px;
   line-height: 100%;
-  left: 20px;
+  left: 25px;
   color: var(--dark);
   position: absolute;
 }
