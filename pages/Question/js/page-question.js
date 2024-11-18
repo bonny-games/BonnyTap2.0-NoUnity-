@@ -1,4 +1,5 @@
 import { questionsData } from '../../../JS/questions-data.js';
+import { popupData } from './popup-data.js';
 
 const LSThemeOfQuestions = localStorage.getItem('themeOfQuestions');
 const LSNumberOfQuestion = localStorage.getItem('questionNumber');
@@ -7,7 +8,7 @@ const question = questionsData[LSThemeOfQuestions][LSNumberOfQuestion];
 
 localStorage.setItem('question', JSON.stringify(question));
 
-const content = document.querySelector('.content');
+const container = document.querySelector('.container');
 
 const questionPage = `
   <header class="header">
@@ -29,7 +30,7 @@ const questionPage = `
       ${question.answers
         .map((answer, index) => {
           return `
-            <a href="/pages/Learn/Learn-page-questions.html" class="link answer-link" data-answer-index="${index + 1}">
+            <a href="#" class="link answer-link" data-answer-index="${index + 1}">
               <li class="list-item" data-question-id="question${index + 1}">
                 <div class="list-info">
                   <span class="list-item__order">${index + 1}</span>
@@ -44,14 +45,37 @@ const questionPage = `
   </main>
 `;
 
-content.insertAdjacentHTML('beforeend', questionPage);
+container.insertAdjacentHTML('beforeend', questionPage);
 
 const answersList = document.querySelector('.answers');
 
 answersList.addEventListener('click', (event) => {
-  const userAnswer = event.target
-    .closest('.list-item')
-    .querySelector('.list-item__title').textContent;
+  const listItem = event.target.closest('.list-item');
+  if (!listItem) return;
+
+  const userAnswer = listItem.querySelector('.list-item__title').textContent;
+
+  const key = userAnswer === question.correctAnswer ? 'correct' : 'incorrect';
+  const popupDataEntry = popupData[key];
+
+  const popupHTML = `
+    <div class="popup">
+      ${
+        key === 'correct'
+          ? `
+        <div class="reward">
+          <span class="plus-sign">+</span>
+          <img src="${popupDataEntry.coinImg}" alt="coin icon">
+          <span>5.300</span>
+        </div>`
+          : ''
+      }
+      <p class="reward-text">${popupDataEntry.text}</p>
+      <a href="/pages/Learn/Learn-page-questions.html" class="btn btn-claim-rewards">${popupDataEntry.btnText}</a>
+    </div>
+  `;
+
+  container.insertAdjacentHTML('afterend', popupHTML);
 
   localStorage.setItem('userAnswer', userAnswer);
 });
