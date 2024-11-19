@@ -77,5 +77,14 @@ answersList.addEventListener('click', (event) => {
 
   container.insertAdjacentHTML('afterend', popupHTML);
 
+  container.classList.add('disabled');
+
+  const popup = document.querySelector('.popup');
+  if (popup) {
+    setTimeout(() => {
+      popup.classList.add('show');
+    }, 10);
+  }
+
   localStorage.setItem('userAnswer', userAnswer);
 });

@@ -25,6 +25,14 @@ networkList.addEventListener('click', (event) => {
     </div>
   `;
   container.insertAdjacentHTML('afterend', popupHTML);
+  container.classList.add('disabled');
+
+  const popup = document.querySelector('.popup');
+  if (popup) {
+    setTimeout(() => {
+      popup.classList.add('show');
+    }, 10);
+  }
 });
 
 document.addEventListener('click', (event) => {
@@ -48,11 +56,12 @@ document.addEventListener('click', (event) => {
 
   if (popupSubscribe) popupSubscribe.style.display = 'none';
 
+  const popup = document.querySelector('.popup');
   const btnClaimRewards = document.querySelector('.btn-claim-rewards');
+
   if (!btnClaimRewards) return;
 
   btnClaimRewards.addEventListener('click', () => {
-    const popup = document.querySelector('.popup');
     const joined = localStorage.getItem('joined');
     const currentTarget = document.querySelector(`[data-name="${joined}"]`);
 
@@ -62,29 +71,13 @@ document.addEventListener('click', (event) => {
 
     localStorage.removeItem('joined');
     localStorage.setItem('taskCompleted', true);
+
+    container.classList.remove('disabled');
   });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-  const joined = localStorage.getItem('joined');
-  const taskCompleted = localStorage.getItem('taskCompleted');
-
-  if (!joined || taskCompleted) return;
-
-  const popupSubscribe = `
-    <div class="popup popup-subscribe">
-      <div class="reward">
-        <span class="plus-sign">+</span>
-        <img src="/images/coin.png" alt="coin icon">
-        <span>5.300</span>
-      </div>
-      <h3 class="label">Follow Bonny Tap News in Telegram</h3>
-      <p class="text">Subscribe and keep following to earn bonus rating every day.</p>
-      <div class="btn-actions">
-        <a href="https://t.me/Bonny_App_News" target="_blank" class="btn btn-subscribe">Subscribe</a>
-        <button type="button" class="btn btn-check-subscribe">Check subscribe</button>
-      </div>
-    </div>
-  `;
-  container.insertAdjacentHTML('afterend', popupSubscribe);
+  if (popup) {
+    setTimeout(() => {
+      popup.classList.add('show');
+    }, 10);
+  }
 });

@@ -42,57 +42,13 @@ mainImage.onload = () => {
   // Draw the main image as the background
   ctx.drawImage(mainImage, 0, 0);
 
-  const textY = canvas.height - 920;
-
-  animateLoadingBar(textY); // Position the loading bar below the text
+  animateLoadingBar();
 };
 
-function animateLoadingBar(loadingBarY) {
-  const loadingBarHeight = 70;
-  const maxWidth = 200; // Maximum width of the loading bar
-  let progress = 0;
-
-  const colors = ['#FD8D4E', '#FCAC82']; // Array of alternating colors
-
-  function drawLoadingBar() {
-    // Clear the area where the loading bar will be drawn, so it doesn't overlap
-    ctx.clearRect(0, loadingBarY, canvas.width, loadingBarHeight);
-
-    // Draw the background image
-    ctx.drawImage(mainImage, 0, 0);
-
-    // Calculate the current width of the loading bar based on the progress
-    const currentWidth = Math.min(maxWidth * (progress / 100), maxWidth);
-
-    // Position the loading bar on the right side
-    const xPosition = 260; // Adjust this to position the bar on the right
-
-    // Draw the alternating colored stripes
-    let currentX = xPosition; // Start drawing from the specified position
-    let colorIndex = 0; // Start with the first color in the array
-
-    // Loop to draw stripes of alternating colors
-    while (currentX < xPosition + currentWidth) {
-      ctx.fillStyle = colors[colorIndex]; // Set the color for the current stripe
-      const stripeWidth = 30; // Width of each stripe
-      ctx.fillRect(currentX, loadingBarY, stripeWidth, loadingBarHeight); // Draw the stripe
-      currentX += stripeWidth; // Move the x position for the next stripe
-
-      // Alternate the color
-      colorIndex = (colorIndex + 1) % colors.length;
-    }
-
-    if (progress < 100) {
-      progress += 1;
-      requestAnimationFrame(drawLoadingBar); // Continue drawing the loading bar
-    } else {
-      setTimeout(() => {
-        canvas.style.display = 'none'; // Hide the canvas after completion
-        gameName.style.display = 'none';
-        loaderBar.style.display = 'none';
-      }, 500);
-    }
-  }
-
-  drawLoadingBar();
+function animateLoadingBar() {
+  setTimeout(() => {
+    canvas.style.display = 'none';
+    gameName.style.display = 'none';
+    loaderBar.style.display = 'none';
+  }, 2500);
 }
