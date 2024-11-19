@@ -16,12 +16,28 @@
 }
 
 #loaderBar {
-  display: block;
-  position: absolute;
-  max-width: 75px;
+  position: fixed;
+  right: 26px;
+  max-width: 200px;
+  height: 40px;
   z-index: 2;
-  top: 15%;
-  right: 24.3%;
+
+  & img {
+    height: 100%;
+    animation: loading 2s infinite linear;
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .header {
@@ -42,9 +58,8 @@
     gap: 10px;
     justify-content: space-evenly;
     min-height: 100%;
-    overflow-y: auto;
     padding-bottom: 10px;
-    margin-bottom: 25px;
+    overflow-y: auto;
   }
 
   & .btn-next {

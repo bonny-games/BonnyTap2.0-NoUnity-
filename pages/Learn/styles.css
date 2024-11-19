@@ -1,6 +1,6 @@
 .main {
   &:not(:first-child) {
-    padding-top: 15px;
+    padding-block: 15px;
   }
 }
 
