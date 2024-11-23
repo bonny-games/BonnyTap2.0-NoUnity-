@@ -1,0 +1,627 @@
+{
+  "TON Ecosystem": {
+    "type": "TON Ecosystem",
+    "q1": {
+      "id": 1,
+      "title": "Question",
+      "questionTitle": "WHAT IS TON?",
+      "answers": [
+        "Total Online Network",
+        "Trusted Object Network",
+        "The Original Network",
+        "The Open Network"
+      ],
+      "correctAnswer": "The Open Network"
+    },
+    "q2": {
+      "id": 2,
+      "title": "Question",
+      "questionTitle": "WHAT IS THE OPEN NETWORK(TON)?",
+      "answers": [
+        "It is a Telegramm Shop",
+        "A subscription that you can make in Telegramm",
+        "It is a Telegramm Wallet",
+        "It is a Blockchain"
+      ],
+      "correctAnswer": "It is a Blockchain"
+    },
+    "q3": {
+      "id": 3,
+      "title": "Question",
+      "questionTitle": "Does TON have a test environment?",
+      "answers": [
+        "Yes",
+        "No",
+        "Yes, but need Telegram Premium",
+        "Yes, but need 1000 Telegram Stars"
+      ],
+      "correctAnswer": "Yes"
+    },
+    "q4": {
+      "id": 4,
+      "title": "Question",
+      "questionTitle": "When The First Block in TON was Mined?",
+      "answers": [
+        "In 2009",
+        "In 2020",
+        "It will happen in the future",
+        "Today"
+      ],
+      "correctAnswer": "In 2020"
+    },
+    "q5": {
+      "id": 5,
+      "title": "Question",
+      "questionTitle": "What is the name of the token used in the TON Blockchain?",
+      "answers": ["BitTON", "EtherTon", "Toncoin", "Telecoin"],
+      "correctAnswer": "Toncoin"
+    },
+    "q6": {
+      "id": 6,
+      "title": "Question",
+      "questionTitle": "What is the purpose of the TON Blockchain?",
+      "answers": [
+        "Only for storing videos",
+        "Creating decentralized applications",
+        "Developing video games",
+        "Only for Bitcoin mining"
+      ],
+      "correctAnswer": "Creating decentralized applications"
+    },
+    "q7": {
+      "id": 7,
+      "title": "Question",
+      "questionTitle": "How does TON differ from other blockchains?",
+      "answers": [
+        "It is a multi-blockchain with high transaction speed",
+        "It is a centralized network",
+        "It doesn't have its own token",
+        "It only works in the USA"
+      ],
+      "correctAnswer": "It is a multi-blockchain with high transaction speed"
+    },
+    "q8": {
+      "id": 8,
+      "title": "Question",
+      "questionTitle": "What was the goal of The Open Network (TON) creators?",
+      "answers": [
+        "To create a decentralized blockchain for Telegram",
+        "To create a platform for NFT games",
+        "To build a blockchain for government systems",
+        "To develop a competitor to Ethereum"
+      ],
+      "correctAnswer": "To create a decentralized blockchain for Telegram"
+    },
+    "q9": {
+      "id": 9,
+      "title": "Question",
+      "questionTitle": "What role did Telegram play in the development of The Open Network (TON)?",
+      "answers": [
+        "Launched the project and raised initial funding",
+        "Created the first NFT marketplace",
+        "Introduced TON as the currency for Telegram Premium",
+        "Used TON to develop the messenger"
+      ],
+      "correctAnswer": "Launched the project and raised initial funding"
+    }
+  },
+  "Founders": {
+    "type": "Founders",
+    "q1": {
+      "id": 1,
+      "title": "Question",
+      "questionTitle": "Who is Satoshi Nakamoto?",
+      "answers": [
+        "Creator of Ethereum Whitepaper",
+        "Popular famous football player",
+        "Popular famous actor",
+        "Creator of Bitcoin Whitepaper"
+      ],
+      "correctAnswer": "Creator of Bitcoin Whitepaper"
+    },
+    "q2": {
+      "id": 2,
+      "title": "Question",
+      "questionTitle": "Who is Vitalii Buterin?",
+      "answers": [
+        "Creator of Binance Smart Chain",
+        "Creator of Solana Blockchain",
+        "Creator of Ethereum Blockchain",
+        "Creator of TON"
+      ],
+      "correctAnswer": "Creator of Ethereum Blockchain"
+    },
+    "q3": {
+      "id": 3,
+      "title": "Question",
+      "questionTitle": "Who is Pavel Durov?",
+      "answers": [
+        "Creator of Binance Smart Chain",
+        "Creator of Solana Blockchain",
+        "Creator of Ethereum Blockchain",
+        "Creator of Telegram"
+      ],
+      "correctAnswer": "Creator of Telegram"
+    },
+    "q4": {
+      "id": 4,
+      "title": "Question",
+      "questionTitle": "Who is the founder of Binance?",
+      "answers": [
+        "Changpeng Zhao",
+        "Pavel Durov",
+        "Satoshi Nakamoto",
+        "Elon Musk"
+      ],
+      "correctAnswer": "Changpeng Zhao"
+    },
+    "q5": {
+      "id": 5,
+      "title": "Question",
+      "questionTitle": "Who created Cardano?",
+      "answers": [
+        "Charles Hoskinson",
+        "Vitalik Buterin",
+        "Sam Bankman-Fried",
+        "Gavin Wood"
+      ],
+      "correctAnswer": "Charles Hoskinson"
+    },
+    "q6": {
+      "id": 6,
+      "title": "Question",
+      "questionTitle": "Who is the creator of Polkadot?",
+      "answers": ["Vitalik Buterin", "Gavin Wood", "Jack Dorsey", "Elon Musk"],
+      "correctAnswer": "Gavin Wood"
+    },
+    "q7": {
+      "id": 7,
+      "title": "Question",
+      "questionTitle": "Who founded Tesla?",
+      "answers": ["Jack Dorsey", "Pavel Durov", "Elon Musk", "Vitalik Buterin"],
+      "correctAnswer": "Elon Musk"
+    },
+    "q8": {
+      "id": 8,
+      "title": "Question",
+      "questionTitle": "Who is the founder of FTX?",
+      "answers": [
+        "Sam Bankman-Fried",
+        "Charles Hoskinson",
+        "Changpeng Zhao",
+        "Pavel Durov"
+      ],
+      "correctAnswer": "Sam Bankman-Fried"
+    },
+    "q9": {
+      "id": 9,
+      "title": "Question",
+      "questionTitle": "Which of the Durov brothers participated in the development of The Open Network (TON)?",
+      "answers": [
+        "Pavel and Nikolai",
+        "Pavel and Sergey",
+        "Nikolai and Dmitry",
+        "Nikolai and Alexei"
+      ],
+      "correctAnswer": "Pavel and Nikolai"
+    },
+    "q10": {
+      "id": 10,
+      "title": "Question",
+      "questionTitle": "Who developed the cryptographic algorithm used in TON?",
+      "answers": [
+        "Nikolai Durov",
+        "Pavel Durov",
+        "Vitalik Buterin",
+        "Charles Hoskinson"
+      ],
+      "correctAnswer": "Nikolai Durov"
+    }
+  },
+  "Security": {
+    "type": "Security",
+    "q1": {
+      "id": 1,
+      "title": "Question",
+      "questionTitle": "What is Seed Phrase?",
+      "answers": [
+        "Data required to access crypto",
+        "Book love story",
+        "This are the traffic rules",
+        "This is a popular joke"
+      ],
+      "correctAnswer": "Data required to access crypto"
+    },
+    "q2": {
+      "id": 2,
+      "title": "Question",
+      "questionTitle": "What is Whitepaper?",
+      "answers": [
+        "Paper from the white house of the president",
+        "Old pirate treasure map",
+        "Receipt of payment in cryptocurrency",
+        "Technology, product or service  documentation"
+      ],
+      "correctAnswer": "Technology, product or service  documentation"
+    },
+    "q3": {
+      "id": 3,
+      "title": "Question",
+      "questionTitle": "What is Smart Contract?",
+      "answers": [
+        "This is a contract to kill in the game",
+        "This is a new action-packed detective story",
+        "Сontract that football players sign",
+        "Computer program that works ib Blockchain"
+      ],
+      "correctAnswer": "Computer program that works ib Blockchain"
+    },
+    "q4": {
+      "id": 4,
+      "title": "Question",
+      "questionTitle": "It is Possible To Know All Private Keys?",
+      "answers": [
+        "It is not possible",
+        "It is possible, but need more than 1 000 000+ Years",
+        "It is possible, need 1 Year",
+        "It is already in Internet"
+      ],
+      "correctAnswer": "It is possible, but need more than 1 000 000+ Years"
+    },
+    "q5": {
+      "id": 5,
+      "title": "Question",
+      "questionTitle": "What is Blockchain?",
+      "answers": [
+        "Digital database",
+        "Anchor chain on a ship",
+        "Jewelry for the neck",
+        "It is a Bitcoin"
+      ],
+      "correctAnswer": "Digital database"
+    },
+    "q6": {
+      "id": 6,
+      "title": "Question",
+      "questionTitle": "What is inflation in cryptocurrency?",
+      "answers": [
+        "It is a Blockchain",
+        "When The number of coins increases",
+        "It is a Game",
+        "When The the crypto is swap"
+      ],
+      "correctAnswer": "When The number of coins increases"
+    },
+    "q7": {
+      "id": 7,
+      "title": "Question",
+      "questionTitle": "What is Cryptocurrency?",
+      "answers": [
+        "It is a Blockchain",
+        "Сoins that were hunted by pirates",
+        "It is a Fruit",
+        "Digital currency for exchange on computer network"
+      ],
+      "correctAnswer": "Digital currency for exchange on computer network"
+    },
+    "q8": {
+      "id": 8,
+      "title": "Question",
+      "questionTitle": "What is Play To Earn(P2E)?",
+      "answers": [
+        "This is a child's game",
+        "This is an old pirate tale",
+        "This is a game in the movie Harry Potter",
+        "Gaming Model"
+      ],
+      "correctAnswer": "Gaming Model"
+    },
+    "q9": {
+      "id": 9,
+      "title": "Question",
+      "questionTitle": "What is AirDrop in Crypto?",
+      "answers": [
+        "It is Cryptocurrency Coin Burning",
+        "It is Crypto Trading Stratagy",
+        "It is Crypto Game",
+        "When crypto sent to the wallets of active members"
+      ],
+      "correctAnswer": "When crypto sent to the wallets of active members"
+    },
+    "q10": {
+      "id": 10,
+      "title": "Question",
+      "questionTitle": "What is Public Key?",
+      "answers": [
+        "It is name of Crypto Hacker",
+        "It is Crypto Trading Stratagy",
+        "It is Refferal Link in Crypto Game",
+        "It is part of Blockchain Security and cryptography"
+      ],
+      "correctAnswer": "It is part of Blockchain Security and cryptography"
+    }
+  },
+  "Another": {
+    "type": "Another",
+    "q1": {
+      "id": 1,
+      "title": "Question",
+      "questionTitle": "What is Ethereum?",
+      "answers": [
+        "It is an island on a earth",
+        "It is a Fruit",
+        "This is a female name",
+        "Blockchain with smart contract functionality"
+      ],
+      "correctAnswer": "Blockchain with smart contract functionality"
+    },
+    "q2": {
+      "id": 2,
+      "title": "Question",
+      "questionTitle": "What are crypto whales?",
+      "answers": [
+        "Individuals that hold large amounts of crypto",
+        "Crypto Game Characters",
+        "It is Large Transaction in Crypto",
+        "It is Crypto Coin Price Dump"
+      ],
+      "correctAnswer": "Individuals that hold large amounts of crypto"
+    },
+    "q3": {
+      "id": 3,
+      "title": "Question",
+      "questionTitle": "What is Mining in Blockchain?",
+      "answers": [
+        "This is a crypto wallet",
+        "This is blockchain hack",
+        "This is cryptocurrency",
+        "Transaction record process in blockchain"
+      ],
+      "correctAnswer": "Transaction record process in blockchain"
+    },
+    "q4": {
+      "id": 4,
+      "title": "Question",
+      "questionTitle": "What is AirDrop?",
+      "answers": [
+        "A method of distributing tokens or cryptocurrency for free",
+        "A type of cryptocurrency wallet",
+        "A social media platform",
+        "A centralized exchange"
+      ],
+      "correctAnswer": "A method of distributing tokens or cryptocurrency for free"
+    },
+    "q5": {
+      "id": 5,
+      "title": "Question",
+      "questionTitle": "What is a crypto wallet?",
+      "answers": [
+        "A device for mining cryptocurrency",
+        "A program for storing and managing cryptocurrencies",
+        "An online cryptocurrency shop",
+        "A blockchain transaction"
+      ],
+      "correctAnswer": "A program for storing and managing cryptocurrencies"
+    },
+    "q6": {
+      "id": 6,
+      "title": "Question",
+      "questionTitle": "What is the process of creating new cryptocurrency called?",
+      "answers": ["Mining", "Downloading", "Copying", "Transferring"],
+      "correctAnswer": "Mining"
+    },
+    "q7": {
+      "id": 7,
+      "title": "Question",
+      "questionTitle": "What is the technology underlying Bitcoin?",
+      "answers": [
+        "Artificial intelligence",
+        "Blockchain",
+        "Electronic money",
+        "Smart contracts"
+      ],
+      "correctAnswer": "Blockchain"
+    },
+    "q8": {
+      "id": 8,
+      "title": "Question",
+      "questionTitle": "What is a smart contract?",
+      "answers": [
+        "A PDF contract",
+        "An automated execution of contract conditions in a blockchain",
+        "A cryptographic system",
+        "A new type of cryptocurrency"
+      ],
+      "correctAnswer": "An automated execution of contract conditions in a blockchain"
+    },
+    "q9": {
+      "id": 9,
+      "title": "Question",
+      "questionTitle": "Which cryptocurrency was the first?",
+      "answers": ["Ethereum", "Bitcoin", "Dogecoin", "Cardano"],
+      "correctAnswer": "Bitcoin"
+    },
+    "q10": {
+      "id": 10,
+      "title": "Question",
+      "questionTitle": "Which token is used on the Ethereum network?",
+      "answers": ["BTC", "ADA", "ETH", "TON"],
+      "correctAnswer": "ETH"
+    }
+  },
+  "Bitcoin": {
+    "type": "Bitcoin",
+    "q1": {
+      "id": 1,
+      "title": "Question",
+      "questionTitle": "What is Bitcoin?",
+      "answers": [
+        "It is a Blockchain",
+        "This is a coin from a pirate's treasure chest",
+        "It is a Game",
+        "The first decentralized cryptocurrency"
+      ],
+      "correctAnswer": "The first decentralized cryptocurrency"
+    },
+    "q2": {
+      "id": 2,
+      "title": "Question",
+      "questionTitle": "When will the last Bitcoin be mined?",
+      "answers": ["Never", "2147 year", "It already happened", "2026 year"],
+      "correctAnswer": "2147 year"
+    },
+    "q3": {
+      "id": 3,
+      "title": "Question",
+      "questionTitle": "When the first Bitcoin be mined?",
+      "answers": ["Today", "Never", "2147 year", "2009 year"],
+      "correctAnswer": "2147 year"
+    },
+    "q4": {
+      "id": 4,
+      "title": "Question",
+      "questionTitle": "What Hesh Function Bitcoin Work on?",
+      "answers": ["H256", "P2E", "BTC", "Bitcoin Doesn't Have Hesh Function"],
+      "correctAnswer": "Bitcoin Doesn't Have Hesh Function"
+    },
+    "q5": {
+      "id": 5,
+      "title": "Question",
+      "questionTitle": "Who is the creator of Bitcoin?",
+      "answers": [
+        "Vitalik Buterin",
+        "Satoshi Nakamoto",
+        "Elon Musk",
+        "Charlie Lee"
+      ],
+      "correctAnswer": "Satoshi Nakamoto"
+    },
+    "q6": {
+      "id": 6,
+      "title": "Question",
+      "questionTitle": "How many Bitcoins can ever exist?",
+      "answers": ["1 million", "21 million", "100 million", "1 billion"],
+      "correctAnswer": "21 million"
+    },
+    "q7": {
+      "id": 7,
+      "title": "Question",
+      "questionTitle": "What is the process of earning Bitcoin by solving complex puzzles called?",
+      "answers": ["Staking", "Mining", "Trading", "Earning"],
+      "correctAnswer": "Mining"
+    },
+    "q8": {
+      "id": 8,
+      "title": "Question",
+      "questionTitle": "What is the smallest unit of Bitcoin called?",
+      "answers": ["Satoshi", "Bit", "Nano", "Micro"],
+      "correctAnswer": "Satoshi"
+    },
+    "q9": {
+      "id": 9,
+      "title": "Question",
+      "questionTitle": "What is the Bitcoin halving?",
+      "answers": [
+        "A new Bitcoin release event",
+        "The reduction in the reward for mining Bitcoin by half every four years",
+        "A way to create more Bitcoin",
+        "A payment method for miners"
+      ],
+      "correctAnswer": "The reduction in the reward for mining Bitcoin by half every four years"
+    },
+    "q10": {
+      "id": 10,
+      "title": "Question",
+      "questionTitle": "What is the Bitcoin network primarily secured by?",
+      "answers": [
+        "Centralized banks",
+        "Proof of Stake",
+        "Proof of Work",
+        "Proof of Authority"
+      ],
+      "correctAnswer": "Proof of Work"
+    }
+  },
+  "howToEarn": {
+    "firstSlider": {
+      "id": 1,
+      "title": "HOW TO EARN",
+      "text": "Explore Blockchain Technology, Crypto, and the Telegram Ecosystem",
+      "img": "/images/how-to-earn-1.png",
+      "btnSkip": "SKIP",
+      "btnNext": "NEXT"
+    },
+    "secondSlider": {
+      "id": 2,
+      "title": "HOW TO EARN",
+      "text": "Answer challenging questions and earn top rewards!",
+      "img": "/images/how-to-earn-2.png",
+      "btnSkip": "SKIP",
+      "btnNext": "NEXT"
+    },
+    "thirdSlider": {
+      "id": 3,
+      "title": "HOW TO EARN",
+      "text": "Tap actively and earn extra rewards for it!",
+      "img": "/images/how-to-earn-3.png",
+      "btnSkip": "SKIP",
+      "btnNext": "NEXT"
+    },
+    "fourthSlider": {
+      "id": 4,
+      "title": "HOW TO EARN",
+      "text": "Upgrade enhancements for greater profit!",
+      "img": "/images/how-to-earn-4.png",
+      "btnSkip": "SKIP",
+      "btnNext": "NEXT"
+    },
+    "fithSlider": {
+      "id": 5,
+      "title": "HOW TO EARN",
+      "text": "Invite friends and compete for the top spot! Become the leader!",
+      "img": "/images/how-to-earn-5.png",
+      "btnSkip": "SKIP",
+      "btnNext": "NEXT"
+    }
+  },
+  "rewards": [
+    { "title": "DAILY REWARD", "btnText": "CLAIM" },
+    { "day": "DAY 1", "date": "6 AUG", "reward": "500", "claimed": true },
+    { "day": "DAY 2", "date": "7 AUG", "reward": "750", "claimed": true },
+    { "day": "DAY 3", "date": "8 AUG", "reward": "1000", "claimed": true },
+    { "day": "DAY 4", "date": "9 AUG", "reward": "1500", "current": true },
+    { "day": "DAY 5", "date": "10 AUG", "reward": "2000", "claimed": false },
+    { "day": "DAY 6", "date": "11 AUG", "reward": "3000", "claimed": false }
+  ],
+  "mainPage": [
+    { "namePage": "Leaderboard" },
+    { "namePage": "Learn" },
+    { "namePage": "Earn" },
+    { "namePage": "Stats" },
+    { "namePage": "Invite" },
+    { "namePage": "Wheel" }
+  ],
+  "leaderboard": {
+    "title": "LEADERBOARD",
+    "position": "YOUR POSITION 100"
+  },
+  "learn": {
+    "title": "LEARN TO EARN",
+    "btnText": "HOW IT WORKS?"
+  },
+  "earn": {
+    "title": "MISSIONS",
+    "btnText": "HOW IT WORKS?"
+  },
+  "popup": {
+    "correct": {
+      "text": "You Win.Answer Is Correct",
+      "coinImg": "/images/coin.png",
+      "btnText": "CLAIM REWARDS"
+    },
+    "incorrect": {
+      "text": "You lose. The answer is not correct. Improve your knowledge and come back later",
+      "btnText": "Go To Menu"
+    }
+  }
+}
