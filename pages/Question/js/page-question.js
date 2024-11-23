@@ -1,10 +1,12 @@
-import { questionsData } from '../../../JS/questions-data.js';
-import { popupData } from './popup-data.js';
+import { loadData } from '../../../JS/loadData.js';
 
 const LSThemeOfQuestions = localStorage.getItem('themeOfQuestions');
 const LSNumberOfQuestion = localStorage.getItem('questionNumber');
+const selectedLang = localStorage.getItem('selectedLang') || 'en';
 
-const question = questionsData[LSThemeOfQuestions][LSNumberOfQuestion];
+const data = await loadData(selectedLang);
+
+const question = data[LSThemeOfQuestions][LSNumberOfQuestion];
 
 localStorage.setItem('question', JSON.stringify(question));
 
@@ -13,7 +15,7 @@ const container = document.querySelector('.container');
 const questionPage = `
   <header class="header">
     <div class="header__main">
-      <h1 class="header__title">QUESTION ${question.id}</h1>
+      <h1 class="header__title">${question.title} ${question.id}</h1>
       <a href="/pages/Learn/Learn-page-questions.html" class="close-icon">
         <img src="/images/close-icon.png" alt="close icon" />
       </a>
@@ -21,10 +23,12 @@ const questionPage = `
   </header>
   <main class="main">
     <div class="question">
-      <p class="question-text">
-        ${question.questionTitle}
-      </p>
-      <img src="/images/question-image.png" alt="Question image">
+      <div class="question-content">
+        <p class="question-text">
+          ${question.questionTitle}
+        </p>
+        <img src="/images/question-image.png" alt="Question image">
+      </div>
     </div>
     <ul class="answers">
       ${question.answers
@@ -56,7 +60,7 @@ answersList.addEventListener('click', (event) => {
   const userAnswer = listItem.querySelector('.list-item__title').textContent;
 
   const key = userAnswer === question.correctAnswer ? 'correct' : 'incorrect';
-  const popupDataEntry = popupData[key];
+  const popupDataEntry = data.popup[key];
 
   const popupHTML = `
     <div class="popup">

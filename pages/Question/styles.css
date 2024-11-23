@@ -10,26 +10,38 @@
 }
 
 .question {
-  position: relative;
   text-align: center;
   border-radius: 15px;
+  height: 120px;
 
   .question-title {
     font-size: 1rem;
     font-weight: inherit;
   }
 
+  & img {
+    max-width: 280px;
+    max-height: 150px;
+  }
+
   &:not(:last-child) {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
 }
 
+.question-content {
+  max-width: 300px;
+  margin-inline: auto;
+  position: relative;
+}
+
 .question-text {
-  max-width: 140px;
-  top: 36.2%;
+  position: absolute;
+  max-width: 170px;
+  text-align: left;
+  top: 50px;
   font-size: 20px;
   line-height: 100%;
   left: 25px;
   color: var(--dark);
-  position: absolute;
 }

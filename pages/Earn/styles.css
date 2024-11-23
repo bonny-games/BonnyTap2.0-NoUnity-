@@ -19,15 +19,25 @@
 }
 
 .popup-subscribe {
+  text-align: center;
   height: 300px;
+  gap: 0px;
 }
 
 .label {
   font-weight: inherit;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
 }
 
 .text {
   font-size: 13px;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
 .btn-actions {

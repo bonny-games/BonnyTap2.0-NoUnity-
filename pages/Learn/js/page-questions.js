@@ -1,15 +1,28 @@
-import { questionsData } from '../../../JS/questions-data.js';
+import { loadData } from '../../../JS/loadData.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  const selectedLang = localStorage.getItem('selectedLang') || 'en';
   const themeOfQuestions = localStorage.getItem('themeOfQuestions');
+  const headerTitle = document.querySelector('.header__title');
+  const linkText = document.querySelector('.btn');
 
-  if (!themeOfQuestions || !questionsData[themeOfQuestions]) {
-    console.error('Theme of questions or questions data is missing!');
+  const questionsData = await loadData(selectedLang);
+
+  headerTitle.textContent = questionsData.learn.title;
+  linkText.textContent = questionsData.learn.btnText;
+
+  if (!questionsData) {
+    console.error(
+      'Questions data is missing for the selected language or theme!',
+    );
     return;
   }
 
-  const LSquestions = questionsData[themeOfQuestions];
-  renderQuestionList(LSquestions);
+  const themeQuestions = Object.values(questionsData[themeOfQuestions]).filter(
+    (item) => typeof item != 'string',
+  );
+
+  renderQuestionList(themeQuestions);
   highlightAnsweredQuestions();
 });
 

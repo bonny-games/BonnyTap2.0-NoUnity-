@@ -6,6 +6,9 @@ languagesList.addEventListener('click', (event) => {
   const listItem = event.target.closest('.list-item');
   if (!listItem) return;
 
+  const selectedLang = listItem.closest('button').dataset.lang;
+  localStorage.setItem('selectedLang', selectedLang);
+
   const checkBox = listItem.querySelector('.list-item__check-box');
 
   if (lastSelectedItem && lastSelectedItem !== listItem) {

@@ -1,14 +1,31 @@
-import { questionsData } from '../../../JS/questions-data.js';
+import { loadData } from '../../../JS/loadData.js';
 
-const typesQuestions = document.querySelector('.blocks-questions');
+document.addEventListener('DOMContentLoaded', async () => {
+  const selectedLang = localStorage.getItem('selectedLang') || 'en';
+  const data = await loadData(selectedLang);
+  const headerTitle = document.querySelector('.header__title');
+  const linkText = document.querySelector('.btn');
 
-typesQuestions?.addEventListener('click', (event) => {
-  const themeOfQuestions = event.target.textContent.trim();
-  const questions = questionsData[themeOfQuestions];
+  if (data) {
+    headerTitle.textContent = data.learn.title;
+    linkText.textContent = data.learn.btnText;
 
-  localStorage.setItem('themeOfQuestions', themeOfQuestions);
+    const links = document.querySelectorAll('[data-type]');
 
-  if (!questions) {
-    return;
+    links.forEach((link) => {
+      const theme = link.dataset.type;
+      if (data[theme]) {
+        link.textContent = data[theme].type;
+      }
+    });
   }
 });
+
+document
+  .querySelector('.blocks-questions')
+  .addEventListener('click', (event) => {
+    const theme = event.target.dataset.type;
+    if (theme) {
+      localStorage.setItem('themeOfQuestions', theme);
+    }
+  });

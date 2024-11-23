@@ -29,6 +29,11 @@
   opacity: 0.5;
 }
 
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -94,6 +99,7 @@
 
   .top-bar__title {
     font-size: 1rem;
+    font-weight: inherit;
     padding: 5px;
     border-radius: 5px;
     background-color: var(--orange);
@@ -264,6 +270,37 @@
   text-align: center;
   width: 100%;
   padding-block: 10px;
+}
+
+.btn-close {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: -124px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(100deg);
+  background-color: #888888;
+  border-radius: 50%;
+
+  &::before {
+    transform: rotate(-143deg);
+  }
+
+  &::after {
+    transform: rotate(123deg);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 14px;
+    height: 2px;
+    background-color: white;
+  }
 }
 
 /* CSS Reset */

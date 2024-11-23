@@ -85,21 +85,21 @@
 .buttons {
   display: flex;
   gap: 10px;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 #skip {
   font-weight: inherit;
   border-radius: 10px;
   padding-block: 10px;
-  padding-inline: 30px;
+  padding-inline: 3.6%;
   border: 1px solid var(--orange);
 }
 
 #next {
   font-weight: inherit;
   background-color: var(--orange);
-  padding-inline: 20%;
+  padding-inline: 15%;
   padding-block: 10px;
   border: 0.5px solid white;
   border-radius: 10px;
