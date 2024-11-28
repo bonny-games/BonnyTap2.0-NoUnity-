@@ -12,6 +12,47 @@ const { earn } = await loadData(selectedLang);
 headerTitle.textContent = earn.title;
 link.textContent = earn.btnText;
 
+const createPopupContent = (data) => {
+  const {
+    type,
+    rewardAmount = '5.300',
+    linkUrl = '',
+    text = '',
+    btnText = '',
+  } = data;
+
+  let additionalContent = '';
+
+  type === 'subscribe'
+    ? (additionalContent = `
+      <div class="reward">
+        <span class="plus-sign">+</span>
+        <img src="/images/coin.png" alt="coin icon">
+        <span>${rewardAmount}</span>
+      </div>
+      <h3 class="label">Follow Bonny Tap News in Telegram</h3>
+      <p class="text">Subscribe and keep following to earn bonus rating every day.</p>
+      <div class="btn-actions">
+        <a href="${linkUrl}" target="_blank" class="btn btn-subscribe">${btnText}</a>
+        <button type="button" class="btn btn-check-subscribe">Check subscribe</button>
+      </div>
+    `)
+    : (additionalContent = `
+      <div class="reward">
+        <span class="plus-sign">+</span>
+        <img src="/images/coin.png" alt="coin icon">
+        <span>${rewardAmount}</span>
+      </div>
+      <p class="text">${text}</p>
+      <a href="#" class="btn btn-claim-rewards">${btnText}</a>
+    `);
+
+  return `
+    <button type="button" class="btn-close"></button>
+    ${additionalContent}
+  `;
+};
+
 const createPopup = (htmlContent, additionalClass = '') => {
   const popupHTML = `
     <div class="popup ${additionalClass}">
@@ -31,6 +72,7 @@ const closePopup = (popup) => {
   container.classList.remove('disabled');
 };
 
+// Обработчик клика по списку каналов
 networkList.addEventListener('click', (event) => {
   const currentTarget = event.target.closest('.list-item');
   if (!currentTarget) return;
@@ -38,20 +80,13 @@ networkList.addEventListener('click', (event) => {
   const channelName = currentTarget.dataset.name;
   localStorage.setItem('joined', channelName);
 
-  const popupContent = `
-    <button type="button" class="btn-close"></button>
-    <div class="reward">
-      <span class="plus-sign">+</span>
-      <img src="/images/coin.png" alt="coin icon">
-      <span>5.300</span>
-    </div>
-    <h3 class="label">Follow Bonny Tap News in Telegram</h3>
-    <p class="text">Subscribe and keep following to earn bonus rating every day.</p>
-    <div class="btn-actions">
-      <a href="https://t.me/Bonny_App_News" target="_blank" class="btn btn-subscribe">Subscribe</a>
-      <button type="button" class="btn btn-check-subscribe">Check subscribe</button>
-    </div>
-  `;
+  const popupContent = createPopupContent({
+    type: 'subscribe',
+    rewardAmount: '5.300',
+    linkUrl: 'https://t.me/Bonny_App_News',
+    btnText: 'Subscribe',
+  });
+
   const popup = createPopup(popupContent, 'popup-subscribe');
 
   container.classList.add('disabled');
@@ -60,6 +95,7 @@ networkList.addEventListener('click', (event) => {
   btnClose?.addEventListener('click', () => closePopup(popup));
 });
 
+// Обработчик клика по кнопке "Check subscribe"
 document.addEventListener('click', (event) => {
   const btnCheckSubscribe = event.target.closest('.btn-check-subscribe');
   if (!btnCheckSubscribe) return;
@@ -67,15 +103,13 @@ document.addEventListener('click', (event) => {
   const popupSubscribe = document.querySelector('.popup-subscribe');
   if (popupSubscribe) popupSubscribe.style.display = 'none';
 
-  const rewardContent = `
-    <div class="reward">
-      <span class="plus-sign">+</span>
-      <img src="/images/coin.png" alt="coin icon">
-      <span>5.300</span>
-    </div>
-    <p class="text">Task is Done! Get Your Reward!</p>
-    <a href="#" class="btn btn-claim-rewards">CLAIM REWARDS</a>
-  `;
+  const rewardContent = createPopupContent({
+    type: 'reward',
+    rewardAmount: '5.300',
+    text: 'Task is Done! Get Your Reward!',
+    btnText: 'CLAIM REWARDS',
+  });
+
   const popup = createPopup(rewardContent);
 
   const btnClaimRewards = document.querySelector('.btn-claim-rewards');

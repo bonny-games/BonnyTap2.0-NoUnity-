@@ -2,14 +2,8 @@ import { loadData } from '../../../JS/loadData.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const selectedLang = localStorage.getItem('selectedLang') || 'en';
-  const themeOfQuestions = localStorage.getItem('themeOfQuestions');
-  const headerTitle = document.querySelector('.header__title');
-  const linkText = document.querySelector('.btn');
-
+  const themeOfQuestions = localStorage.getItem('themeOfQuestions') || '';
   const questionsData = await loadData(selectedLang);
-
-  headerTitle.textContent = questionsData.learn.title;
-  linkText.textContent = questionsData.learn.btnText;
 
   if (!questionsData) {
     console.error(
@@ -18,22 +12,41 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  const themeQuestions = Object.values(questionsData[themeOfQuestions]).filter(
-    (item) => typeof item != 'string',
-  );
+  const {
+    learn: { title, btnText },
+  } = questionsData;
+  updateTextContent('.header__title', title);
+  updateTextContent('.btn', btnText);
 
+  const themeQuestions = getThemeQuestions(questionsData, themeOfQuestions);
   renderQuestionList(themeQuestions);
   highlightAnsweredQuestions();
 });
 
+function updateTextContent(selector, text) {
+  const element = document.querySelector(selector);
+  if (element) {
+    element.textContent = text;
+  } else {
+    console.error(`Element not found for selector: ${selector}`);
+  }
+}
+
+function getThemeQuestions(data, theme) {
+  const themeQuestions = data[theme];
+
+  if (!themeQuestions) return [];
+  return Object.values(themeQuestions).filter(
+    (item) => typeof item !== 'string',
+  );
+}
+
 function renderQuestionList(questions) {
+  if (!questions.length) return;
+
   const questionListHTML = `
     <ul class="question-list">
-      ${Object.entries(questions)
-        .map(([key, question], index) =>
-          createQuestionItemHTML(question, index),
-        )
-        .join('')}
+      ${questions.map((question, index) => createQuestionItemHTML(question, index)).join('')}
     </ul>
   `;
 
@@ -44,11 +57,9 @@ function renderQuestionList(questions) {
   }
   main.innerHTML = questionListHTML;
 
-  const questionList = document.querySelector('.question-list');
-
-  questionList
-    ? questionList.addEventListener('click', handleQuestionClick)
-    : console.error('Question list not found!');
+  document
+    .querySelector('.question-list')
+    ?.addEventListener('click', handleQuestionClick);
 }
 
 function createQuestionItemHTML(question, index) {
@@ -95,9 +106,8 @@ function highlightAnsweredQuestions() {
     return;
   }
 
-  question.correctAnswer === userAnswer
-    ? listItem.classList.add('correct')
-    : listItem.classList.add('incorrect');
-
+  const classToAdd =
+    question.correctAnswer === userAnswer ? 'correct' : 'incorrect';
+  listItem.classList.add(classToAdd);
   listItem.closest('.link')?.classList.add('disabled');
 }

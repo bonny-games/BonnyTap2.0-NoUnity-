@@ -5,18 +5,32 @@ async function initializeRewards() {
   const title = document.querySelector('.title');
   const claimReward = document.querySelector('.claim-btn');
   const selectedLang = localStorage.getItem('selectedLang');
-  const data = await loadData(selectedLang);
 
-  if (!data || !data.rewards) return;
+  const data = await loadData(selectedLang);
+  if (!data?.rewards) return;
 
   const metaData = data.rewards[0];
-  const fileredData = data.rewards.filter((item) => item.day);
+  const filteredData = data.rewards.filter((item) => item.day);
 
   title.textContent = metaData.title;
   claimReward.textContent = metaData.btnText;
 
+  // Используем делегирование событий для обработки кликов по кнопкам
+  rewardsDay.addEventListener('click', (event) => {
+    const button = event.target.closest('button');
+    if (!button || button.disabled) return;
+
+    if (button.dataset.day === '4') {
+      button.classList.add('orange');
+    } else {
+      button.classList.add('green');
+      button.disabled = true;
+    }
+  });
+
+  // Обновим кнопки с данными из filteredData
   rewardsDay.querySelectorAll('button').forEach((button, index) => {
-    const rewardData = fileredData[index];
+    const rewardData = filteredData[index];
     if (!rewardData) return;
 
     button.querySelector('.day').textContent = `${rewardData.day}`;
@@ -29,20 +43,6 @@ async function initializeRewards() {
     } else {
       button.classList.remove('green', 'orange');
     }
-  });
-
-  const rewardDay4 = document.querySelector('[data-day="4"]');
-
-  rewardDay4.addEventListener('click', () => {
-    rewardDay4.classList.add('orange');
-  });
-
-  rewardsDay.addEventListener('click', (event) => {
-    const button = event.target.closest('button');
-    if (!button || button.disabled) return;
-
-    button.classList.add('green');
-    button.disabled = true;
   });
 }
 
