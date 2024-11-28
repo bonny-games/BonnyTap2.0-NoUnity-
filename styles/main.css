@@ -1,0 +1,36 @@
+.main:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-block: 15px;
+  padding-inline: 25px;
+  border-radius: 25px;
+  background-color: var(--orange);
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 36px;
+
+  & img {
+    max-width: 30px;
+  }
+}
+
+.mark-active {
+  position: absolute;
+  top: -15px;
+  width: 29px;
+  height: 4px;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
