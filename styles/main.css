@@ -1,36 +1,115 @@
-.main:not(:last-child) {
-  margin-bottom: 20px;
-}
-
-.tabs {
+#myCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  padding-block: 15px;
-  padding-inline: 25px;
-  border-radius: 25px;
-  background-color: var(--orange);
-}
-
-.tab {
-  position: relative;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  min-height: 36px;
 
   & img {
-    max-width: 30px;
+    max-width: 100%;
+    min-height: 100%;
   }
 }
 
-.mark-active {
-  position: absolute;
-  top: -15px;
-  width: 29px;
-  height: 4px;
-  background-color: white;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+#loaderBar {
+  position: fixed;
+  right: 26px;
+  max-width: 200px;
+  height: 40px;
+  z-index: 2;
+
+  & img {
+    height: 100%;
+    animation: loading 2s infinite linear;
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.header {
+  .header__title {
+    font-size: 1.0625rem;
+  }
+}
+
+.main {
+  & .btn-next {
+    display: block;
+    font-size: 1rem;
+    width: 87%;
+    margin-inline: auto;
+    border: 0.5px solid white;
+  }
+}
+
+.main_transparent {
+  background-color: transparent;
+}
+
+.languages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px;
+  background-color: var(--darkest-grey);
+  border-radius: 15px;
+  overflow-y: auto;
+
+  .languages-btn {
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .list-item {
+    border: 0.5px solid white;
+  }
+
+  .list-info {
+    width: 100%;
+  }
+
+  .list-item__title {
+    font-size: 13px;
+
+    &:not(:last-child) {
+      margin-right: auto;
+    }
+  }
+
+  .list-item__order {
+    background-color: transparent;
+    border-radius: 0;
+
+    & img {
+      max-width: 35px;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.btn-wheel {
+  display: block;
+  font-size: 22px;
+  width: 170px;
+  text-align: center;
+  margin-inline: auto;
 }
