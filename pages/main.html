@@ -4,22 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main page</title>
-    <link rel="stylesheet" href="/styles/index.css" />
     <link rel="stylesheet" href="/styles/common.css" />
     <link rel="stylesheet" href="/styles/main.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container container_none">
       <header class="header">
-          <div class="header__main">
-            <h1 class="header__title">BONNY APP</h1>
+        <button type="button" class="btn-burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="user-progress">
+          <div class="user-info">
+            <img src="/images/user-icon.svg" alt="user-icon">
+            <span class="user-name">YOUR NAME</span>
           </div>
-          <div class="header__banner">
-            <img src="/images/banner.png" alt="Banner">
+          <div class="progress">
+            <p class="progress-text">LVL 7/10</p>
+            <div class="progress-bar">
+              <img src="/images/progress-bar.svg" alt="progress-bar">
+            </div>
           </div>
+        </div>
+        <button type="button" class="btn-settings">
+          <img src="/images/settings-icon.svg" alt="settings-icon">
+        </button>
       </header>
       <main class="main">
-          <ul class="list-page">
+        <div class="user-balance">
+          <div class="ton">
+            <img src="/images/ton-icon.svg" alt="ton-icon">
+            <span>0.03</span>
+          </div>
+          <div class="stars">
+            <img src="/images/star-icon.svg" alt="star-icon">
+            <span>200</span>
+          </div>
+          <div class="coins">
+            <img src="/images/new-coin-icon.svg" alt="coin-icon">
+            <span>5.300</span>
+          </div>
+        </div>
+        <ul class="list-page">
             <a href="/pages/Leaderboard/Leaderboard-page.html" class="link">
               <li class="list-item">
                 <span class="list-item__order">1</span>
@@ -56,9 +83,8 @@
                 <span class="list-item__title">Wheel</span>
               </li>
             </a>
-          </ul>
-      </main>
-      <div class="tabs">
+        </ul>
+        <div class="tabs">
         <a href="#" class="tab">
           <span class="mark-active"></span>
           <img src="/images/tab.svg" alt="tab icon">
@@ -79,6 +105,7 @@
           <img src="/images/tab-6.svg" alt="tab icon">
         </a>
       </div>
+      </main>
     </div>
 
     <script src="/JS/main.js" type="module"></script>
