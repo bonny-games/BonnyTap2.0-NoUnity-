@@ -110,7 +110,9 @@ function checkAndAddWinningItem() {
       </div>
     `;
 
+    content.closest('.result-wrapper').style.display = 'block';
     content.appendChild(winningItem);
+
     winningItem.insertAdjacentHTML('afterend', html);
   }
 }
