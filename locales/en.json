@@ -594,6 +594,7 @@
     { "day": "DAY 6", "date": "11 AUG", "reward": "3000", "claimed": false }
   ],
   "mainPage": [
+    { "namePage": "Games" },
     { "namePage": "Leaderboard" },
     { "namePage": "Learn" },
     { "namePage": "Earn" },
