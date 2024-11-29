@@ -12,16 +12,3 @@ import { loadData } from './loadData.js';
       }
     });
 })();
-
-const tabs = document.querySelector('.tabs');
-
-tabs.addEventListener('click', (event) => {
-  const tab = event.target.closest('a');
-
-  if (!tab) return;
-
-  document.querySelectorAll('.mark-active').forEach((mark) => mark.remove());
-
-  const activeMark = `<span class="mark-active"></span>`;
-  tab.insertAdjacentHTML('afterbegin', activeMark);
-});
