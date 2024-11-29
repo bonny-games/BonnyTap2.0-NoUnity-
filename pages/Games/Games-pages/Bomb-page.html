@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/common.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Bomb-game</title>
+</head>
+<body data-page="bomb">
+    <div class="container container_none">
+        <main class="main">
+          <div class="image">
+            <img src="images/Bomb-image.svg" alt="Bomb-game">
+            <a href="/pages/Games/main.html" type="button" class="btn-close close"></a>
+            <h1>Bomb Game</h1>
+          </div>
+          <ol class="list">
+            <li>1. Find Banana</li>
+            <li>2. Avoid Bomb</li>
+            <li>3. Collect Prize</li>
+          </ol>
+          <div class="count-items">
+            <div class="banana-count">
+                <img src="images/banana-icon.svg" alt="banana-icon">
+                <span>22</span>
+            </div>
+            <div class="bomb-count">
+                <img src="images/mini-bomb.svg" alt="mini-bomb-icon">
+                <span>5</span>
+            </div>
+          </div>
+          <button type="button" class="btn-play btn">PLAY</button>
+          <div class="overlay" style="display: none;">
+            <img id="image-display" src="images/bomb-start.png" alt="game-start-2048" />
+          </div>
+        </main>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
