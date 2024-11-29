@@ -1,115 +1,157 @@
-#myCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
+.header {
+  padding-inline: 10px;
+  padding-top: 10px;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.btn-burger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #ff7621, #ce2014);
+  border-radius: 15px;
+  cursor: pointer;
+
+  & span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+  }
+}
+
+.user-info {
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  & img {
-    max-width: 100%;
-    min-height: 100%;
-  }
-}
-
-#loaderBar {
-  position: fixed;
-  right: 26px;
-  max-width: 200px;
-  height: 40px;
-  z-index: 2;
-
-  & img {
-    height: 100%;
-    animation: loading 2s infinite linear;
-  }
-}
-
-@keyframes loading {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.header {
-  .header__title {
-    font-size: 1.0625rem;
-  }
-}
-
-.main {
-  & .btn-next {
-    display: block;
-    font-size: 1rem;
-    width: 87%;
-    margin-inline: auto;
-    border: 0.5px solid white;
-  }
-}
-
-.main_transparent {
-  background-color: transparent;
-}
-
-.languages {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 15px 17px;
   gap: 10px;
-  padding: 20px;
-  background-color: var(--darkest-grey);
-  border-radius: 15px;
-  overflow-y: auto;
+  justify-content: space-between;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom: 1px solid orange;
+  background: linear-gradient(180deg, rgba(255, 118, 33, 0) 0%, rgba(255, 118, 33, 0.5) 80.32%, #ff7621 100%);
 
-  .languages-btn {
-    cursor: pointer;
-    width: 100%;
-  }
-
-  .list-item {
-    border: 0.5px solid white;
-  }
-
-  .list-info {
-    width: 100%;
-  }
-
-  .list-item__title {
-    font-size: 13px;
-
-    &:not(:last-child) {
-      margin-right: auto;
-    }
-  }
-
-  .list-item__order {
-    background-color: transparent;
-    border-radius: 0;
-
-    & img {
-      max-width: 35px;
-    }
+  & img {
+    max-width: 40px;
   }
 
   &:not(:last-child) {
-    margin-bottom: 8px;
+    margin-bottom: 5px;
   }
 }
 
-.btn-wheel {
-  display: block;
-  font-size: 22px;
-  width: 170px;
+.progress {
   text-align: center;
-  margin-inline: auto;
+}
+
+.progress-bar {
+  width: 100%;
+  max-height: 21px;
+  border-radius: 15px;
+  background-color: white;
+
+  & img {
+    border-radius: 10px;
+    max-width: 80%;
+    max-height: 20px;
+  }
+}
+
+.btn-settings {
+  cursor: pointer;
+}
+
+.list-page {
+  display: flex;
+  border-radius: 10px;
+  padding-inline: 20px;
+  padding-block: 10px;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-evenly;
+  background-color: var(--dark-grey);
+  min-height: 100%;
+  padding-bottom: 10px;
+  overflow-y: auto;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-block: 15px;
+  padding-inline: 25px;
+  border-radius: 25px;
+  background-color: var(--orange);
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 36px;
+
+  & img {
+    max-width: 30px;
+  }
+}
+
+.mark-active {
+  position: absolute;
+  top: -15px;
+  width: 29px;
+  height: 4px;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.user-balance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.ton {
+}
+
+.stars {
+}
+
+.coins {
+  padding: 10px;
+  background-color: var(--orange);
+  border-radius: 15px;
+}
+
+:is(.ton, .stars, .coins) {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+
+  & span {
+    font-size: 20px;
+  }
+
+  & img {
+    max-width: 40px;
+  }
 }
