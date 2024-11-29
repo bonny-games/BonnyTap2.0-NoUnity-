@@ -1,0 +1,46 @@
+.main {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(2, 140px);
+  grid-template-rows: 200px 130px;
+
+  & a:first-child {
+    grid-column: span 2;
+  }
+
+  & a {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  & span {
+    position: absolute;
+    bottom: 40px;
+    left: 24px;
+    font-size: 20px;
+  }
+}
+
+.rocket-game span {
+  top: 165px;
+  left: 22px;
+}
+
+.not-available {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+:is(.bomb, .snacke) {
+  span {
+    bottom: 35px;
+  }
+}
+
+:is(.game-2048, .chess, .bomb, .snacke) {
+  img {
+    max-width: 190px;
+  }
+}
