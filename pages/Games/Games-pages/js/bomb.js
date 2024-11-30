@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       showPopup(popupHTML3, 'popupHTML3');
     } else if (target.classList.contains('btn-play-again')) {
       sessionStorage.setItem('showPopupHTML4', 'true');
-      window.location.href = '/pages/Games/Games-pages/Bomb-game.html';
+      window.location.href = '/pages/Games/Games-pages/Bomb-page.html';
     } else if (target.classList.contains('btn-go-to-menu')) {
       overlay.style.display = 'none';
       window.location.href = '/pages/Games/main.html';
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  if (window.location.pathname === '/pages/Games/Games-pages/Bomb-game.html') {
+  if (window.location.pathname === '/pages/Games/Games-pages/Bomb-page.html') {
     if (sessionStorage.getItem('showPopupHTML4') === 'true') {
       showPopup(popupHTML4, 'popupHTML4');
       sessionStorage.removeItem('showPopupHTML4');
