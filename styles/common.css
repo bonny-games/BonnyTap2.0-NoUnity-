@@ -241,6 +241,10 @@
   & img {
     width: 50px;
   }
+
+  .reward-text {
+    text-align: center;
+  }
 }
 
 .popup.show {
@@ -301,6 +305,10 @@
     height: 2px;
     background-color: white;
   }
+}
+
+.popup_bottom {
+  bottom: 0;
 }
 
 /* CSS Reset */

@@ -33,13 +33,22 @@
   opacity: 0.7;
 }
 
+.bomb img {
+  max-width: 129px;
+  margin-left: 14px;
+}
+
+.game-2048 img {
+  max-width: 130px;
+}
+
 :is(.bomb, .snacke) {
   span {
     bottom: 35px;
   }
 }
 
-:is(.game-2048, .chess, .bomb, .snacke) {
+:is(.chess, .snacke) {
   img {
     max-width: 190px;
   }

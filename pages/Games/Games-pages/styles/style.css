@@ -4,6 +4,7 @@
 
 .main {
   display: flex;
+  align-items: center;
   flex-direction: column;
   background-color: #2e2720;
   min-height: 100vh;
@@ -11,11 +12,15 @@
 }
 
 .image {
+  max-width: 320px;
   position: relative;
   text-align: center;
 
   & h1 {
-    font-size: 36px;
+    position: absolute;
+    top: 215px;
+    left: 66px;
+    font-size: 2.25rem;
     font-weight: inherit;
   }
 
@@ -25,8 +30,8 @@
 }
 
 .close {
-  position: fixed;
-  top: 10px;
+  position: absolute;
+  top: 15px;
   right: 20px;
 }
 
@@ -34,14 +39,13 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-left: 63px;
 
   &:not(:last-child) {
     margin-bottom: 70px;
   }
 
   & li {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 
@@ -69,10 +73,52 @@
   & img {
     max-width: 90%;
     max-height: 90%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    border-radius: 8px; 
+    border-radius: 8px;
     cursor: pointer;
   }
+}
+
+.overlay.show {
+  display: flex;
+  opacity: 1;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup {
+  animation: popupIn 0.5s ease-out forwards;
 }
 
 .count-items {
@@ -111,4 +157,91 @@
       max-width: 40px;
     }
   }
+}
+
+.btn-actions {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+}
+
+.btn-invite {
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.btn-go-to-menu {
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+:is(.btn-invite, .btn-pay, .btn-go-to-menu, .btn-play-again) {
+  width: 100%;
+  padding-block: 7px;
+}
+
+.opacity #image-display {
+  filter: brightness(50%);
+  transition: filter 0.3s ease;
+}
+
+.btn-next_modify {
+  width: 235px;
+  padding-block: 8px;
+}
+
+.reward-text_margin:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.next-game {
+  text-align: center;
+
+  & p {
+    font-size: 14px;
+  }
+
+  & time {
+    font-size: 30px;
+  }
+}
+
+.remind {
+  width: 250px;
+  padding-block: 10px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid var(--orange);
+}
+
+.or {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+  & .line {
+    width: 40px;
+    height: 2px;
+    background-color: white;
+  }
+}
+
+.text-content {
+  text-align: center;
+
+  & h4 {
+    font-weight: inherit;
+  }
+
+  & p {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.popup_height {
+  height: 400px;
 }
