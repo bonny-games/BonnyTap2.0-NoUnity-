@@ -28,12 +28,11 @@ const updateSlide = () => {
   }
 
   currentSlideElement.querySelector('#title').textContent = slide.title;
-  currentSlideElement.querySelector('#text').textContent = slide.text;
   currentSlideElement.querySelector('#image').src = slide.img;
 
   // Обновление текста кнопок в зависимости от текущего слайда
   if (currentSlide === convertedData.length - 1) {
-    nextButton.textContent = slide.btnStart || 'START';
+    nextButton.textContent = slide.btnStart || 'NEXT';
     skipButton.style.display = 'none';
   } else {
     nextButton.textContent = slide.btnNext || 'NEXT';
@@ -80,7 +79,7 @@ nextButton.addEventListener('click', () => {
     currentSlide++;
     updateSlide();
   } else {
-    window.location.href = '/pages/Daily-reward/Daily-reward-page.html';
+    window.location.href = '/pages/main.html';
   }
 });
 
