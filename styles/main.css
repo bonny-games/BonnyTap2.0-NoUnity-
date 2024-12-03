@@ -1,6 +1,25 @@
-.header {
+.container_none {
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding-inline: 10px;
-  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.header {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #3e3e45;
+  padding: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 
   &:not(:last-child) {
     margin-bottom: 20px;
@@ -86,39 +105,6 @@
   }
 }
 
-.tabs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding-block: 15px;
-  padding-inline: 25px;
-  border-radius: 25px;
-  background-color: var(--orange);
-}
-
-.tab {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 36px;
-
-  & img {
-    max-width: 30px;
-  }
-}
-
-.mark-active {
-  position: absolute;
-  top: -15px;
-  width: 29px;
-  height: 4px;
-  background-color: white;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
 .user-balance {
   display: flex;
   align-items: center;
@@ -127,12 +113,6 @@
   &:not(:last-child) {
     margin-bottom: 10px;
   }
-}
-
-.ton {
-}
-
-.stars {
 }
 
 .coins {
@@ -153,5 +133,59 @@
 
   & img {
     max-width: 40px;
+  }
+}
+
+.balance_margin:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.games {
+  width: 300px;
+}
+
+.leaderboard img {
+  margin-left: auto;
+  max-width: 190px;
+}
+
+.wheel img {
+  margin-left: auto;
+}
+
+:is(.leaderboard, .wheel) {
+  width: 100%;
+  max-width: 288px;
+}
+
+:is(.friends-and-learn, .missions-and-stats) {
+  display: flex;
+  column-gap: 8px;
+}
+
+:is(.stats, .missions, .leaderboard, .wheel, .learn, .friends) {
+  background-color: var(--darkest-grey);
+  border-radius: 25px;
+
+  & img {
+    max-width: 140px;
+  }
+}
+
+:is(.games, .friends-and-learn, .leaderboard, .missions-and-stats) {
+  &:not(:last-child) {
+    margin-bottom: 35px;
+  }
+}
+
+:is(.leaderboard, .friends, .learn, .wheel, .stats, .missions, .games) {
+  cursor: pointer;
+  position: relative;
+
+  & p {
+    position: absolute;
+    font-size: 22px;
+    left: 20px;
+    bottom: 5px;
   }
 }

@@ -52,8 +52,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   min-width: 97%;
   box-sizing: border-box;
+
+  & {
+    margin-bottom: 35px;
+  }
 
   & img {
     max-width: 210px;

@@ -11,15 +11,16 @@
   padding-bottom: 20px;
 }
 
-.image {
-  max-width: 320px;
+.game-name {
+  width: 100%;
+  height: 320px;
   position: relative;
   text-align: center;
 
   & h1 {
+    width: 100%;
     position: absolute;
     top: 215px;
-    left: 66px;
     font-size: 2.25rem;
     font-weight: inherit;
   }
@@ -27,6 +28,21 @@
   &:not(:last-child) {
     margin-bottom: 20px;
   }
+}
+
+.image-2048 {
+  background-image: url(/pages/Games/Games-pages/images/image-2048.svg);
+}
+
+.image-bomb {
+  background-image: url(/pages/Games/Games-pages/images/Bomb-image.svg);
+}
+
+:is(.image-2048, .image-bomb) {
+  height: 320px;
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat; 
 }
 
 .close {
