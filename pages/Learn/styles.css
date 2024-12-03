@@ -40,7 +40,7 @@
     border-radius: 18px;
 
     & img {
-      max-height: 140px;
+      height: 140px;
     }
 
     &:not(:last-child) {
