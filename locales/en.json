@@ -545,40 +545,35 @@
   "howToEarn": {
     "firstSlider": {
       "id": 1,
-      "title": "HOW TO EARN",
-      "text": "Explore Blockchain Technology, Crypto, and the Telegram Ecosystem",
+      "title": "1. Play Bonny Games",
       "img": "/images/how-to-earn-1.png",
       "btnSkip": "SKIP",
       "btnNext": "NEXT"
     },
     "secondSlider": {
       "id": 2,
-      "title": "HOW TO EARN",
-      "text": "Answer challenging questions and earn top rewards!",
+      "title": "2. Farm Bonny Coin",
       "img": "/images/how-to-earn-2.png",
       "btnSkip": "SKIP",
       "btnNext": "NEXT"
     },
     "thirdSlider": {
       "id": 3,
-      "title": "HOW TO EARN",
-      "text": "Tap actively and earn extra rewards for it!",
+      "title": "3. Learn and Boost your expiriance",
       "img": "/images/how-to-earn-3.png",
       "btnSkip": "SKIP",
       "btnNext": "NEXT"
     },
     "fourthSlider": {
       "id": 4,
-      "title": "HOW TO EARN",
-      "text": "Upgrade enhancements for greater profit!",
+      "title": "4. Be on a First Place of Leaderboard",
       "img": "/images/how-to-earn-4.png",
       "btnSkip": "SKIP",
       "btnNext": "NEXT"
     },
     "fithSlider": {
       "id": 5,
-      "title": "HOW TO EARN",
-      "text": "Invite friends and compete for the top spot! Become the leader!",
+      "title": "5. Create Your Own Squad",
       "img": "/images/how-to-earn-5.png",
       "btnSkip": "SKIP",
       "btnNext": "NEXT"
