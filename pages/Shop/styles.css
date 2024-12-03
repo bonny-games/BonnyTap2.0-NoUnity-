@@ -1,0 +1,55 @@
+.header:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.first-block {
+  display: flex;
+  gap: 20px;
+
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
+}
+
+.second-block {
+  display: flex;
+  gap: 10px;
+}
+
+.buy-coins {
+  min-height: 126px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-grey);
+  border-radius: 15px;
+
+  & img {
+    height: 60px;
+  }
+
+  & button {
+    height: 35px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: inherit;
+    gap: 5px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--orange);
+
+    & img {
+      max-width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+.coins-amount {
+  font-size: 14px;
+  color: #d8d8d8;
+}
