@@ -1,43 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/common.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Bomb-game</title>
-</head>
-<body data-page="bomb">
-    <div class="container container_none">
-        <main class="main">
-          <div class="game-name">
-            <div class="image-bomb">
-            </div>
-            <a href="/pages/Games/main.html" type="button" class="btn-close close"></a>
-            <h1>Bomb Game</h1>
-          </div>
-          <ol class="list">
-            <li>1. Find Banana</li>
-            <li>2. Avoid Bomb</li>
-            <li>3. Collect Prize</li>
-          </ol>
-          <div class="count-items">
-            <div class="banana-count">
-                <img src="images/banana-icon.svg" alt="banana-icon">
-                <span>22</span>
-            </div>
-            <div class="bomb-count">
-                <img src="images/mini-bomb.svg" alt="mini-bomb-icon">
-                <span>5</span>
-            </div>
-          </div>
-          <button type="button" class="btn-play btn">PLAY</button>
-          <div class="overlay" style="display: none;">
-            <img id="image-display" src="images/bomb-start.png" alt="game-start-2048" />
-          </div>
-        </main>
-    </div>
 
-    <script src="js/bomb.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../styles/common.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/bomb.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Bomb-game</title>
+</head>
+
+<body data-page="bomb">
+  <div class="container bg-red container_none">
+    <main class="main relative">
+      <!-- Menu items (will be hidden when `play` button is clicked) -->
+      <div class="menu-items col-h">
+        <div class="image">
+          <img src="./images/Bomb-image.svg" alt="Bomb-game">
+          <a href="../../../pages/Games/main.html" type="button" class="btn-close close"></a>
+          <h1 class="absolute top-[18rem] left-1/2 -translate-x-1/2 min-w-[15rem] text-center text-4xl">Bomb Game</h1>
+        </div>
+        <ol class="list">
+          <li>1. Find Banana</li>
+          <li>2. Avoid Bomb</li>
+          <li>3. Collect Prize</li>
+        </ol>
+        <div class="count-items">
+          <div class="banana-count">
+            <img src="./images/banana-icon.svg" alt="banana-icon">
+            <span>22</span>
+          </div>
+          <div class="bomb-count">
+            <img src="./images/mini-bomb.svg" alt="mini-bomb-icon">
+            <span>3</span>
+          </div>
+        </div>
+      </div>
+      <div id="bomb-game-container" class="absolute hidden size-full flex flex-col bg-lightgrayb">
+        <div class="relative min-h-full">
+          <!-- Header -->
+          <div class="bg-grayb min-h-[7rem] px-8 row justify-between rounded-bl-3xl rounded-br-3xl">
+            <img src="./images/mini-bomb.svg" height="54" width="54" alt="Bomb">
+            <h3 class="text-white uppercase tracking-wide text-3xl">bomb</h3>
+            <img src="./images/mini-bomb.svg" height="54" width="54" class="rotated-y" alt="Bomb">
+          </div>
+          <!-- Game -->
+          <section id="bomb-section" class="bg-lightgrayb flex-1 px-8">
+            <div class="pt-2 pb-4">
+              <!-- Row displaying items -->
+              <div class="pt-4 pb-6 font-semibold text-lg md:mt-4">
+                <div class="-mb-1 md:mb-auto flex justify-between text-white">
+                  <div class="py-2 px-3 row space-x-2 bg-orangeb rounded-lg">
+                    <img src="./images/banana-icon.svg" height="30" width="30" alt="Correct Guesses" />
+                    <span id="banana-counter">0 / 22</span>
+                  </div>
+                  <div class="py-2 px-3 row space-x-2 bg-orangeb rounded-lg">
+                    <img src="./images/mini-bomb.svg" height="30" width="30" alt="Bombs" />
+                    <span id="bomb-counter" class="text-lg">12%</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Bombs grid -->
+              <div id="bomb-grid" class="flex-1 p-2 grid grid-rows-5 gap-y-2 grid-flow-row bg-orangeb rounded-2xl">
+                <!-- Row loop -->
+                <!-- Row 1 -->
+                <div class="grid grid-cols-5 gap-x-3 min-h-12">
+                  <!-- Column loop -->
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="grid grid-cols-5 gap-x-3 min-h-12">
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Row 3 -->
+                <div class="grid grid-cols-5 gap-x-3 min-h-12">
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Row 4 -->
+                <div class="grid grid-cols-5 gap-x-3 min-h-12">
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Row 5 -->
+                <div class="grid grid-cols-5 gap-x-3 min-h-12">
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-container">
+                    <div class="card clickcard">
+                      <div class="front face rounded-xl bg-dark row text-white bold text-3xl pointer">
+                        ?
+                      </div>
+                      <div class="back rounded-xl row bg-red face">
+                        <img class="card-img" src="./images/banana-icon.svg" height="40" width="40" alt="Card Back" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Multipliers -->
+              <div id="multipliers-row" class="mt-3 flex space-x-1 text-white text-xs md:text-md xl:text-lg"></div>
+
+              <!-- Balance -->
+              <div id="balance-row"
+                class="mt-4 rounded-2xl py-4 px-7 bg-dark text-white flex items-center justify-between">
+                <span>ВАШ БАЛАНС:</span>
+                <div class="flex">
+                  <span class="mr-2">57101</span>
+                  <img height="25" width="25" src="../../../images/diamond.svg" alt="Diamond" />
+                </div>
+              </div>
+              <!-- Play button -->
+              <div class="row">
+                <button id="payoff-btn"
+                  class="btn-play btn mt-3 py-2.5 w-full uppercase pointer-events-none brightness-75">
+                  Выплата
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- Modals -->
+          <div id="modal-container" class="absolute hidden top-1/2 h-1/2 w-full">
+            <div id="modal-1">
+              <div class="popup popup_bottom h-full">
+                <p class="reward-text">Game is Over.</p>
+                <span>You Find: 7 Bananas</span>
+                <button id="modal-1-btn" class="btn btn-next btn-next_modify">NEXT</button>
+              </div>
+            </div>
+            <div id="modal-1" class="hidden">
+              <div class="popup popup_bottom h-full">
+                <p class="reward-text">Game is Over.</p>
+                <span>You Find: 7 Bananas</span>
+                <button id="modal-2-btn" class="btn btn-next btn-next_modify">NEXT</button>
+              </div>
+            </div>
+            <div id="modal-2" class="hidden">
+              <div class="popup popup_bottom h-full">
+                <p class="reward-text modal-2-reward-text">Your 7 Bananas Converted into Rewards</p>
+                <div class="reward">
+                  <span class="plus-sign">+</span>
+                  <img src="../../../images/coin.png" alt="coin icon">
+                  <span>5.300</span>
+                </div>
+                <div class="btn-actions">
+                  <button id="modal-2-btn-x2" class="btn btn-claim-rewards">CLAIM X2</button>
+                  <button id="modal-2-btn-reward" class="btn btn-claim-rewards">CLAIM REWARDS</button>
+                </div>
+              </div>
+            </div>
+            <div id="modal-3" class="hidden">
+              <div class="popup popup_bottom h-full">
+                <p class="reward-text modal-3-reward-text reward-text_margin">Congratulations!<br>You Already Collect 5 300</p>
+                <div class="btn-actions">
+                  <a href="../../../pages/Games/main.html" class="btn-go-to-menu">GO TO MENU</a>
+                  <button class="btn btn-play-again text-center">PLAY AGAIN</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" id="menu-btn" class="btn-play btn mt-4">PLAY</button>
+      <!--           <div class="overlay" style="display: none;">
+            <img id="image-display" src="./images/bomb-start.png" alt="game-start-bomb" />
+          </div> -->
+      <div class="play-again-modal popup-alt hidden absolute bottom-0 h-3/5 w-full rounded-tl-2xl rounded-tr-2xl">
+        <div class="popup popup_bottom h-full bg-[#18222E]">
+          <button type="button" class="btn-close"></button>
+          <div class="next-game">
+            <p>The next game starts in</p>
+            <time class="time">07:59:38</time>
+          </div>
+          <button type="button" class="remind">Remind me</button>
+          <div class="or">
+            <span class="line"></span>
+            <span class="text">or</span>
+            <span class="line"></span>
+          </div>
+          <div class="text-content">
+            <h4>No more attempts</h4>
+            <p>To get an additional attempt, you can invite 5 friends or purchase it for 100 stars.</p>
+          </div>
+          <div class="btn-actions mb-3">
+            <a href="#" class="btn-invite">Invite Friend</a>
+            <btn class="btn btn-pay">Play for 100 stars</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./js/bomb-new.js"></script>
 </body>
+
 </html>
