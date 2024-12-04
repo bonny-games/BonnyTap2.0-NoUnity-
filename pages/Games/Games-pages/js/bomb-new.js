@@ -98,12 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modalContainer.classList.remove('hidden');
     modal3.classList.remove('hidden');
     rewardText.innerHTML = 'You lost this time.<br>Play again to win';
-    // To do: duplicate code, remove
-    const modal3PlayAgainBtn = document.getElementsByClassName('btn-play-again')[0];
-    modal3PlayAgainBtn.addEventListener('click', () => {
-      modal3.classList.add('hidden');
-      playAgainModal.classList.remove('hidden');
-    });
+    openPlayAgainModal();
   }
 
   const playAgain = () => {
@@ -137,10 +132,16 @@ document.addEventListener('DOMContentLoaded', () => {
     modal2X2Btn.addEventListener('click', goToModalThree);
     modal2RewardBtn.addEventListener('click', goToModalThree);
 
+    openPlayAgainModal();
+  }
+
+  const openPlayAgainModal = () => {
     const modal3PlayAgainBtn = document.getElementsByClassName('btn-play-again')[0];
     modal3PlayAgainBtn.addEventListener('click', () => {
+      console.log('clicked modal 3');
       modal3.classList.add('hidden');
       playAgainModal.classList.remove('hidden');
+      bombGameContainer.classList.add('hidden');
     });
   }
 
@@ -269,7 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
   /** When `play` button is clicked, remove menu and start the game. */
   const removeMenuAndStart = () => {
     bombGameContainer.classList.remove('hidden');
-    bombGameContainer.classList.add('block');
     updatePayoffButton();
   }
 
