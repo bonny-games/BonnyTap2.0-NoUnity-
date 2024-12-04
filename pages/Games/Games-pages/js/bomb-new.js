@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const startTime = performance.now();
   const menuBtn = document.getElementById('menu-btn');
-  const imageDisplay = document.getElementsByClassName('#image-display')[0];
-  const bgImage = document.getElementsByClassName('image')[0];
-  const optionsList = document.getElementsByClassName('list')[0];
-  const countItems = document.getElementsByClassName('count-items')[0];
   const cardImages = Array.from(document.getElementsByClassName('card-img'));
   const bombGameContainer = document.getElementById('bomb-game-container');
   const bombSection = document.getElementById('bomb-section')
