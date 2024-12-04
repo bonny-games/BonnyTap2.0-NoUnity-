@@ -311,6 +311,28 @@
   bottom: 0;
 }
 
+.balance {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.balance-coin {
+  padding: 10px;
+  background-color: var(--orange);
+  border-radius: 15px;
+}
+
+:is(.balance-ton, .balance-star, .balance-coin) {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
+  & img {
+    max-width: 35px;
+  }
+}
+
 /* CSS Reset */
 
 *,

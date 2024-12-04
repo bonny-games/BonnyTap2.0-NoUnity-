@@ -8,63 +8,90 @@
     <link rel="stylesheet" href="/styles/main.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container container_none">
       <header class="header">
-        <div class="header__main">
-          <h1 class="header__title">MAIN PAGE</h1>
-          <a href="#" class="close-icon">
-            <img src="/images/close-icon.png" alt="close icon" />
-          </a>
+        <button type="button" class="btn-burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="user-progress">
+          <div class="user-info">
+            <img src="/images/user-icon.svg" alt="user-icon">
+            <span class="user-name">YOUR NAME</span>
+          </div>
+          <div class="progress">
+            <p class="progress-text">LVL 7/10</p>
+            <div class="progress-bar">
+              <img src="/images/progress-bar.svg" alt="progress-bar">
+            </div>
+          </div>
         </div>
-        <div class="header__banner">
-          <img src="/images/banner.png" alt="Banner">
-        </div>
+        <button type="button" class="btn-settings">
+          <img src="/images/settings-icon.svg" alt="settings-icon">
+        </button>
       </header>
         <main class="main">
-          <ul class="list-page">
-            <a href="../pages/Games/main.html" class="link">
-              <li class="list-item">
-                <span class="list-item__order">1</span>
-                <span class="list-item__title"> Games</span>
-              </li>
+          <div class="balance balance_margin">
+            <div class="balance-ton">
+                <img src="/images/ton-icon.svg" alt="ton-icon">
+                <span>0.03</span>
+            </div>
+            <div class="balance-star">
+                <img src="/images/star-icon.svg" alt="star-icon">
+                <span>200</span>
+            </div>
+            <a href="/pages/Shop/Shop.html" class="balance-coin">
+                <img src="/images/new-coin-icon.svg" alt="coin-icon">
+                <span>5.300</span>
             </a>
-            <a href="/pages/Leaderboard/Leaderboard-page.html" class="link">
-              <li class="list-item">
-                <span class="list-item__order">2</span>
-                <span class="list-item__title"> Leaderboard</span>
-              </li>
+          </div>
+          <div class="games">
+            <a href="/pages/Games/main.html">
+              <img src="/images/Games-image.png" alt="Image">
+              <p>Games</p>
             </a>
-            <a href="/pages/Learn/Learn-page.html" class="link">
-              <li class="list-item">
-                <span class="list-item__order">3</span>
-                <span class="list-item__title">Learn</span>
-              </li>
+          </div>
+          <div class="friends-and-learn">
+            <div class="friends">
+              <a href="/pages/Invite/Invite-page.html">
+                <img src="/images/Friends-category.png" alt="Image">
+                <p>Friends</p>
+              </a>
+            </div>
+            <div class="learn">
+              <a href="/pages/Learn/Learn-page.html">
+                <img src="/images/Learn-category.png" alt="Image">
+                <p>Learn</p>
+              </a>
+            </div>
+          </div>
+          <div class="leaderboard">
+            <a href="/pages/Leaderboard/Leaderboard-page.html">
+              <img src="/images/Leaderboard-category.png" alt="Image">
+              <p>Leaderboard</p>
             </a>
-            <a href="/pages/Earn/Earn-page.html" class="link">
-              <li class="list-item">
-                <span class="list-item__order">4</span>
-                <span class="list-item__title">Earn</span>
-              </li>
+          </div>
+          <div class="missions-and-stats">
+            <div class="missions">
+              <a href="/pages/Earn/Earn-page.html">
+                <img src="/images/Mission-category.png" alt="Image">
+                <p>Missions</p>
+              </a>
+            </div>
+            <div class="stats">
+              <a href="#">
+                <img src="/images/Stats-categot=ry.png" alt="Image">
+                <p>Stats</p>
+              </a>
+            </div>
+          </div>
+          <div class="wheel">
+            <a href="/pages/Spin/Spin-page.html">
+              <img src="/images/Wheel-category.png" alt="Image">
+              <p>Wheel</p>
             </a>
-            <a href="/pages/Stats/Stats-page.html" class="link">
-              <li class="list-item">
-                <span class="list-item__order">5</span>
-                <span class="list-item__title">Stats</span>
-              </li>
-            </a>
-            <a href="/pages/Invite/Invite-page.html" class="link">
-              <li class="list-item">
-                <span class="list-item__order">6</span>
-                <span class="list-item__title">Invite</span>
-              </li>
-            </a>
-            <a href="/pages/Spin/Spin-page.html" class="link">
-              <li class="list-item">
-                <span class="list-item__order">7</span>
-                <span class="list-item__title">Wheel</span>
-              </li>
-            </a>
-        </ul>
+          </div>
       </main>
     </div>
 
