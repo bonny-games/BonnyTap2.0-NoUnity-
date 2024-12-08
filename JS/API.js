@@ -1,3 +1,6 @@
+const API_URL = "https://miniapp-sigma-khaki.vercel.app/api";
+
+
 // Initialize Telegram Web App
 const tg = window.Telegram.WebApp;
 
@@ -8,7 +11,7 @@ console.log(userInfo);
 
 
 export function completeLearning() {
-    const url = '/api/user/complete_learning';
+    const url = API_URL + '/user/complete_learning';
 
     const data = {
         token: localStorage.getItem("miniapp_token"),
@@ -57,7 +60,7 @@ function formatNumberWithDots(number) {
 
 export async function getUserInfo() {
 
-    const url = "/api/get_user";
+    const url = API_URL + "/get_user";
 
     const data = {
         token: localStorage.getItem("miniapp_token"),
@@ -75,7 +78,7 @@ export async function getUserInfo() {
 
 
 export async function setUserLang(lang) {
-    const url = '/api/user/set_lang';
+    const url = API_URL + '/user/set_lang';
 
     const data = {
         lang_name: lang,
@@ -87,7 +90,7 @@ export async function setUserLang(lang) {
 }
 
 async function sendInitDataToAPI(initData) {
-    const apiUrl = "/api/validate"; // Replace with your API URL
+    const apiUrl = API_URL + "/validate"; // Replace with your API URL
 
     try {
         // Prepare the request payload
@@ -118,7 +121,7 @@ async function sendInitDataToAPI(initData) {
 
 
 export async function saveAnswer(category, question_id, answer) {
-    const url = '/api/answer';
+    const url = API_URL + '/answer';
 
     const data = {
         token: localStorage.getItem("miniapp_token"),
@@ -131,7 +134,7 @@ export async function saveAnswer(category, question_id, answer) {
 }
 
 export async function getAnswers() {
-    const url = '/api/get_answers';
+    const url = API_URL + '/get_answers';
 
     const data = {
         token: localStorage.getItem("miniapp_token"),
@@ -142,7 +145,7 @@ export async function getAnswers() {
 }
 
 export async function getRefferalLink() {
-    const url = '/api/get_refferal_link';
+    const url = API_URL + '/get_refferal_link';
 
     const data = {
         token: localStorage.getItem("miniapp_token"),
@@ -154,7 +157,7 @@ export async function getRefferalLink() {
 
 
 export async function getRefferals() {
-    const url = '/api/get_refferals';
+    const url = API_URL + '/get_refferals';
 
     const data = {
         token: localStorage.getItem("miniapp_token"),
@@ -168,7 +171,7 @@ export async function getRefferals() {
 
 
 export async function checkSubscription(channel_id) {
-    const url = '/api/check_subscription';
+    const url = API_URL + '/check_subscription';
 
     const data = {
         token: localStorage.getItem("miniapp_token"),
