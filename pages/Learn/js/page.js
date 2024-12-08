@@ -1,8 +1,12 @@
 import { loadData } from '../../../JS/loadData.js';
+import { getUserInfo } from '../../../JS/API.js';
+
 
 document.addEventListener('DOMContentLoaded', async () => {
   const selectedLang = localStorage.getItem('selectedLang') || 'en';
   const data = await loadData(selectedLang);
+  const userInfo = await getUserInfo();
+  document.querySelector("body > div > header > div.header__top-bar.top-bar > div > span").innerHTML = userInfo.coins;
 
   if (!data) {
     console.error('Failed to load data');

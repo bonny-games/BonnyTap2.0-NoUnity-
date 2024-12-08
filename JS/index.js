@@ -1,3 +1,7 @@
+import { userLogin, setUserLang } from '/JS/API.js';
+
+userLogin();
+
 // Select language
 const languagesList = document.querySelector('.languages');
 let lastSelectedItem = null;
@@ -7,7 +11,10 @@ languagesList.addEventListener('click', (event) => {
   if (!listItem) return;
 
   const selectedLang = listItem.dataset.lang;
-  if (selectedLang) localStorage.setItem('selectedLang', selectedLang);
+  if (selectedLang) {
+    localStorage.setItem('selectedLang', selectedLang);
+    setUserLang(localStorage.getItem('selectedLang'));
+  }
 
   if (lastSelectedItem && lastSelectedItem !== listItem) {
     lastSelectedItem.querySelector(

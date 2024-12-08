@@ -1,4 +1,5 @@
 import { loadData } from '../../../JS/loadData.js';
+import { saveAnswer } from '../../../JS/API.js';
 
 const LSThemeOfQuestions = localStorage.getItem('themeOfQuestions');
 const LSNumberOfQuestion = localStorage.getItem('questionNumber');
@@ -67,6 +68,7 @@ container.addEventListener('click', (event) => {
   const userAnswer = listItem.querySelector('.list-item__title').textContent;
   const key = userAnswer === question.correctAnswer ? 'correct' : 'incorrect';
   const popupDataEntry = data.popup[key];
+  saveAnswer(LSThemeOfQuestions, LSNumberOfQuestion, userAnswer);
 
   const popupHTML = `
     <div class="popup">

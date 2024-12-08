@@ -1,4 +1,5 @@
 import { loadData } from '../../../JS/loadData.js';
+import { completeLearning } from '../../../JS/API.js';
 
 let currentSlide = 0;
 
@@ -79,6 +80,7 @@ nextButton.addEventListener('click', () => {
     currentSlide++;
     updateSlide();
   } else {
+    completeLearning();
     window.location.href = '/pages/main.html';
   }
 });

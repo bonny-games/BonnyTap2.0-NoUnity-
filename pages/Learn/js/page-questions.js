@@ -1,9 +1,14 @@
 import { loadData } from '../../../JS/loadData.js';
+import { getAnswers, getUserInfo } from '../../../JS/API.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const selectedLang = localStorage.getItem('selectedLang') || 'en';
   const themeOfQuestions = localStorage.getItem('themeOfQuestions') || '';
   const questionsData = await loadData(selectedLang);
+  const serverAnswers = await getAnswers();
+  const userInfo = await getUserInfo();
+
+  updateBalance(userInfo.coins);
 
   if (!questionsData) {
     console.error(
@@ -20,8 +25,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const themeQuestions = getThemeQuestions(questionsData, themeOfQuestions);
   renderQuestionList(themeQuestions);
-  highlightAnsweredQuestions();
+  highlightAnsweredQuestions(serverAnswers, themeOfQuestions);
 });
+
+function updateBalance(balance) {
+  document.querySelector("body > div > header > div.header__top-bar.top-bar > div > span").innerHTML = balance;
+}
 
 function updateTextContent(selector, text) {
   const element = document.querySelector(selector);
@@ -90,24 +99,30 @@ function handleQuestionClick(event) {
   localStorage.setItem('questionTitle', questionTitle);
 }
 
-function highlightAnsweredQuestions() {
-  const question = JSON.parse(localStorage.getItem('question'));
-  const questionNumber = localStorage.getItem('questionNumber');
-  const userAnswer = localStorage.getItem('userAnswer');
+function highlightAnsweredQuestions(serverAnswers, themeOfQuestions) {
+  serverAnswers.forEach((answerEl) => {
+    const question = JSON.parse(localStorage.getItem('question'));
+    const questionNumber = 'q' + answerEl.question_id;
+    const userAnswer = answerEl.answer;
+    const correct = answerEl.correct;
 
-  if (!question || !questionNumber || !userAnswer) {
-    console.warn('No answered question data found.');
-    return;
-  }
+    if (!question || !questionNumber || !userAnswer) {
+      console.warn('No answered question data found.');
+      return;
+    }
 
-  const listItem = document.querySelector(`[data-id="${questionNumber}"]`);
-  if (!listItem) {
-    console.error(`List item with ID "${questionNumber}" not found!`);
-    return;
-  }
+    const listItem = document.querySelector(`[data-id="${questionNumber}"]`);
+    if (!listItem) {
+      console.error(`List item with ID "${questionNumber}" not found!`);
+      return;
+    }
+    if (themeOfQuestions == answerEl.category) {
+      const classToAdd =
+        correct ? 'correct' : 'incorrect';
+      listItem.classList.add(classToAdd);
+      listItem.closest('.link')?.classList.add('disabled');
+    }
 
-  const classToAdd =
-    question.correctAnswer === userAnswer ? 'correct' : 'incorrect';
-  listItem.classList.add(classToAdd);
-  listItem.closest('.link')?.classList.add('disabled');
+  });
+
 }
