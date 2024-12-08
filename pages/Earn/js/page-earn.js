@@ -1,11 +1,21 @@
 import { loadData } from '../../../JS/loadData.js';
 
+import { getUserInfo, checkSubscription } from '../../../JS/API.js';
+
+
+const userInfo = await getUserInfo();
 const container = document.querySelector('.container');
 const networkList = document.querySelector('.network-list');
 const headerTitle = document.querySelector('.header__title');
 const link = document.querySelector('.btn');
+const linkUrl = 'https://t.me/bonny_bot_test_channel';
 
 const selectedLang = localStorage.getItem('selectedLang');
+
+document
+  .querySelector("body > div > header > div.header__top-bar.top-bar > div > span")
+  .innerHTML = userInfo.coins;
+
 
 const { earn } = await loadData(selectedLang);
 
@@ -83,7 +93,8 @@ networkList.addEventListener('click', (event) => {
   const popupContent = createPopupContent({
     type: 'subscribe',
     rewardAmount: '5.300',
-    linkUrl: 'https://t.me/Bonny_App_News',
+    // linkUrl: 'https://t.me/Bonny_App_News',
+    linkUrl: linkUrl,
     btnText: 'Subscribe',
   });
 
@@ -96,7 +107,9 @@ networkList.addEventListener('click', (event) => {
 });
 
 // Обработчик клика по кнопке "Check subscribe"
-document.addEventListener('click', (event) => {
+document.addEventListener('click', async function (event) {
+
+
   const btnCheckSubscribe = event.target.closest('.btn-check-subscribe');
   if (!btnCheckSubscribe) return;
 
@@ -110,17 +123,37 @@ document.addEventListener('click', (event) => {
     btnText: 'CLAIM REWARDS',
   });
 
-  const popup = createPopup(rewardContent);
 
-  const btnClaimRewards = document.querySelector('.btn-claim-rewards');
-  btnClaimRewards?.addEventListener('click', () => {
-    const joined = localStorage.getItem('joined');
-    const currentTarget = document.querySelector(`[data-name="${joined}"]`);
-
-    if (currentTarget) currentTarget.classList.add('joined');
-    closePopup(popup);
-
-    localStorage.removeItem('joined');
-    localStorage.setItem('taskCompleted', true);
+  const unsubContent = createPopupContent({
+    type: 'reward',
+    rewardAmount: '0',
+    text: 'Subscribtion not found!',
+    btnText: 'Close',
   });
+
+  const subscribed = await checkSubscription(linkUrl);
+
+  if (subscribed == "subscribed") {
+    const popup = createPopup(rewardContent);
+
+    const btnClaimRewards = document.querySelector('.btn-claim-rewards');
+    btnClaimRewards?.addEventListener('click', () => {
+      const joined = localStorage.getItem('joined');
+      const currentTarget = document.querySelector(`[data-name="${joined}"]`);
+
+      if (currentTarget) currentTarget.classList.add('joined');
+      closePopup(popup);
+
+      localStorage.removeItem('joined');
+      localStorage.setItem('taskCompleted', true);
+    });
+  } else {
+    const popup = createPopup(unsubContent);
+
+    const btnClaimRewards = document.querySelector('.btn-claim-rewards');
+    btnClaimRewards?.addEventListener('click', () => {
+      closePopup(popup);
+    })
+  }
+
 });
