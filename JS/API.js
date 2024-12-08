@@ -102,6 +102,7 @@ async function sendInitDataToAPI(initData) {
         const response = await fetch(apiUrl, {
             method: "POST",
             body: formData,
+            mode: 'no-cors',
         });
 
         // Check if the response is successful
