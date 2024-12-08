@@ -1,4 +1,4 @@
-const API_URL = "https://miniapp-sigma-khaki.vercel.app/api";
+const API_URL = "https://miniapp-rho-virid.vercel.app/api";
 
 
 // Initialize Telegram Web App
