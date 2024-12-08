@@ -26,6 +26,7 @@ async function sendPost(url, data) {
     // Options for the fetch request
     const options = {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json', // Adjust headers as needed
             'Authorization': 'Bearer your-token-here' // Include authorization if required
